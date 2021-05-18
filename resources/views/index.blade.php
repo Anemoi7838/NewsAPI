@@ -7,17 +7,20 @@
         <title>News</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        <link rel="canonical" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
     <div class="container ">
         @foreach($news as $data)
         <div class="card-body pt-0 pb-2">
             <h3 class="h5 card-title">
+                <hr size=3 color="black">
                 <a href="{{$data['url']}}">{{$data['name']}}</a>
+                <button>favorite</button>
             </h3>
             <div class="card-text">
-                <img src="{{$data['thumbnail']}}">
+                <p>{{$data['content']}}</p>
+                <img src="{{$data['thumbnail']}}" width="500" height="400">
             </div>
         </div>
         @endforeach

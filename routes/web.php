@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('');
 });
 
 Route::get("/api","NewsController@index");
+Route::get("/search","NewsController@store");

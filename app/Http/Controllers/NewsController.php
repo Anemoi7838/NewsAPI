@@ -15,7 +15,7 @@ class NewsController extends Controller
         try {
             
             //$url = config('newsapi.news_api_url') . "top-headlines?country=us&category=business&apiKey=" . config('newsapi.news_api_key');
-            $url = config('newsapi.news_api_url') . "everything?q=meteorology&sortBy=publishedAt&apiKey=" . config('newsapi.news_api_key');
+            $url = config('newsapi.news_api_url') . "everything?q=meteorology&language=en&sortBy=publishedAt&apiKey=" . config('newsapi.news_api_key');
             
             $method = "GET";
             $count = 15;
@@ -33,6 +33,7 @@ class NewsController extends Controller
                     'name' => $articles['articles'][$id]['title'],
                     'url' => $articles['articles'][$id]['url'],
                     'thumbnail' => $articles['articles'][$id]['urlToImage'],
+                    'content' => $articles['articles'][$id]['content']
                 ]);
             }
         } catch (RequestException $e) {
