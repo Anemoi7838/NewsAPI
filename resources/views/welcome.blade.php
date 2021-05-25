@@ -64,9 +64,6 @@
         </style>
     </head>
     <body>
-        @foreach($news as $data)
-            <p>{{$data['name']}}</p>
-        @endforeach
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">

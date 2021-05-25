@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use App\Http\Requests\NewsRequest; 
+
 
 
 use GuzzleHttp\Client;
@@ -11,14 +14,30 @@ class NewsController extends Controller
 {
     public function index()
     {
-
+        $keywords="meteorology";
+        $sortBy="relevancy";
+        $count=10;
+        $news=$this->getNews($keywords,$sortBy,$count);
+        return view('index', compact('news'));
+    }
+    public function search(NewsRequest $request)
+    {
+        $keywords = $request -> keywords;
+        $sortBy = $request -> sortBy;
+        $count = $request -> count;
+        $news = $this->getNews($keywords,$sortBy,$count);
+        return view('index', compact('news'));
+    }
+    
+    public function getNews($keywords,$sortBy,$count)
+    {
         try {
             
             //$url = config('newsapi.news_api_url') . "top-headlines?country=us&category=business&apiKey=" . config('newsapi.news_api_key');
-            $url = config('newsapi.news_api_url') . "everything?q=meteorology&language=en&sortBy=publishedAt&apiKey=" . config('newsapi.news_api_key');
+            $url = config('newsapi.news_api_url') . "everything?q=".$keywords."&language=en&sortBy=".$sortBy."&apiKey=" . config('newsapi.news_api_key');
             
             $method = "GET";
-            $count = 15;
+            $counts = $count;
 
             $client = new Client();
             $response = $client->request($method, $url);
@@ -28,7 +47,7 @@ class NewsController extends Controller
 
             $news = [];
 
-            for ($id = 0; $id < $count; $id++) {
+            for ($id = 0; $id < $counts; $id++) {
                 array_push($news, [
                     'name' => $articles['articles'][$id]['title'],
                     'url' => $articles['articles'][$id]['url'],
@@ -42,6 +61,12 @@ class NewsController extends Controller
                 echo Psr7\Message::toString($e->getResponse());
             }
         }
-        return view('index', compact('news'));
+        return $news;
+    }
+    public function store(NewsRequest $request)
+    {
+        $favorite = $request -> favorite;
+        Auth::user()->favorite($favorite);
+        return view('home');
     }
 }

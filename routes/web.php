@@ -12,8 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('');
+    return view('auth/login');
 });
 
 Route::get("/api","NewsController@index");
-Route::get("/search","NewsController@store");
+Route::get("/search","NewsController@search");
+Auth::routes();
+Route::get("/store","NewsController@store");
+Route::get('/home', 'HomeController@index')->name('home');
