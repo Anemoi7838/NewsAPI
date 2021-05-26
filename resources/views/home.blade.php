@@ -19,10 +19,10 @@
                         <input type="text" name="keywords" value="{{ old('keywords') }}" ></br>
                         <p class="keywords__error" style="color:red">{{ $errors->first( "keywords") }}</p>
                         <h2>Select option</h2>
-                        <input type="radio" name="sortBy" value="relevancy">relevancy
+                        <input type="radio" name="sortBy" value="relevancy" checked="checked">relevancy
                         <input type="radio" name="sortBy" value="popularity">popularity
                         <input type="radio" name="sortBy" value="publishedAt">publishedAt<br>
-                        <h2>Input article counts
+                        <h2>Input article counts</h2>
                         <input type="text" name="count" value="{{ old('count') }}">
                         <p class="count__error" style="color:red">{{ $errors->first( "keywords") }}</p>
                         <input type="submit" value="submit">
