@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\NewsRequest; 
-
+use App\News;
 
 
 use GuzzleHttp\Client;
@@ -63,10 +63,15 @@ class NewsController extends Controller
         }
         return $news;
     }
-    public function store(NewsRequest $request)
+    public function store(News $fav, Request $request)
     {
-        $favorite = $request -> favorite;
-        Auth::user()->favorite($favorite);
-        return view('home');
+        //dd($request->all());
+        
+        $input=$request["news"];
+        $fav->timestamps = false; 
+        $fav->fill($input)->save();
+        return redirect('/home');
+        #return view('index')->with(['favorite' => $fav->get()]);
     }
+   
 }

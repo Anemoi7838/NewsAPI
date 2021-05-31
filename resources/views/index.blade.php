@@ -11,12 +11,14 @@
     </head>
     <body>
     <div class="container ">
+        <h1>{{ Auth::user()->name }}さんでログイン中</h1>
+        <?php $id=Auth::id(); ?>
         <form method="GET" action="/search">
             <h2>Input keywords</h2>
             <input type="text" name="keywords" value="{{ old('keywords') }}" ></br>
             <p class="keywords__error" style="color:red">{{ $errors->first( "keywords") }}</p>
             <h2>Select option</h2>
-            <input type="radio" name="sortBy" value="relevancy">relevancy
+            <input type="radio" name="sortBy" value="relevancy" checked="checked">relevancy
             <input type="radio" name="sortBy" value="popularity">popularity
             <input type="radio" name="sortBy" value="publishedAt">publishedAt<br>
             <h2>Input article counts</h2>
@@ -28,7 +30,14 @@
         <div class="card-body pt-0 pb-2">
             <h3 class="h5 card-title">
                 <hr size=3 color="black">
-                <a href="{{$data['url']}}">{{$data['name']}}</a>
+                <a href="{{ $data['url'] }}">{{ $data['name'] }}</a>
+                <form action="/store" method="POST">
+                    @csrf
+                    <input type="hidden"name="news[name]" value="<?php echo $id;?>">
+                    <input type="hidden"name="news[title]" value="{{ $data['name'] }}">
+                    <input type="hidden"name="news[url]" value="{{ $data['url'] }}">
+                    <input type="submit" value="favorite">
+                </form>
             </h3>
             <div class="card-text">
                 <p>{{$data['content']}}</p>
