@@ -27,11 +27,27 @@
                             <p class="count__error" style="color:red">{{ $errors->first( "keywords") }}</p>
                             <input type="submit" value="submit">
                         </form>
+                        <h2>Favorite articles</h2>
                      @foreach ($favorites as $favorite)
                         <div class='post'>
-                            <?php $aaa=Auth::id();$bbb=$favorite->name;?>
-                            @if ( $aaa==$bbb )
+                            <?php $cid=Auth::id();$aid=$favorite->name;?>
+                            @if ( $cid==$aid )
                                 <a href="{{ $favorite->url}}">{{ $favorite->title }}</a>
+                                <form action="/delete/{{ $favorite->id }}" id="form_delete"  method="post" >
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="submit" style="display:none" value="delete">
+                                    <button><span onclick="return deleteNews(this);">delete</span></button>
+                                    <script>
+                                    function deleteNews(e) {
+                                    'use strict';
+ 
+                                    if (confirm('本当に削除していいですか?')) {
+                                        document.getElementById('form_delete').submit();
+                                        }
+                                    }
+                                    </script>
+                                </form>    
                             @endif
                         </div>
                     @endforeach

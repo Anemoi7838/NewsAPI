@@ -63,15 +63,21 @@ class NewsController extends Controller
         }
         return $news;
     }
-    public function store(News $fav, Request $request)
+    public function store(News $favorite, Request $request)
     {
         //dd($request->all());
         
         $input=$request["news"];
-        $fav->timestamps = false; 
-        $fav->fill($input)->save();
+        //$fav->timestamps = false; 
+        $favorite->fill($input)->save();
         return redirect('/home');
         #return view('index')->with(['favorite' => $fav->get()]);
+    }
+    public function delete(News $favorite)
+    {
+        //dd($favorite->all());
+        $favorite->delete();
+        return redirect("/home");
     }
    
 }
