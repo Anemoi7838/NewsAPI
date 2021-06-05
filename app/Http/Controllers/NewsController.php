@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\NewsRequest; 
 use App\News;
 
+use Illuminate\Support\Facades\Log;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
@@ -32,9 +33,22 @@ class NewsController extends Controller
     public function getNews($keywords,$sortBy,$count)
     {
         try {
+            /*$keyword = str_replace("　", " ", $keywords);
+            $array = explode(" ",$keyword);
+            $key = "?";
+            for ($i=0;$i<count($array);$i++){
+                if ( $i==0){
+                    $sentence="q=".$array[$i];
+                }else{
+                    $sentence="&q=".$array[$i];
+                }
+                $key=$key.$sentence;
+            }*/
+            //$url = config('newsapi.news_api_url') . "everything".$key."&language=en&sortBy=".$sortBy."&apiKey=" . config('newsapi.news_api_key');
             
             //$url = config('newsapi.news_api_url') . "top-headlines?country=us&category=business&apiKey=" . config('newsapi.news_api_key');
             $url = config('newsapi.news_api_url') . "everything?q=".$keywords."&language=en&sortBy=".$sortBy."&apiKey=" . config('newsapi.news_api_key');
+            Log::debug($url);
             
             $method = "GET";
             $counts = $count;

@@ -11,7 +11,7 @@
     </head>
     <body>
     <div class="container ">
-        <h1>{{ Auth::user()->name }}さんでログイン中</h1>
+        <h1>{{ Auth::user()->name }}さんでログイン中</h1><a href="/home">HOME</a>
         <?php $id=Auth::id(); ?>
         <form method="GET" action="/search">
             <h2>Input keywords</h2>
@@ -23,7 +23,7 @@
             <input type="radio" name="sortBy" value="publishedAt">publishedAt<br>
             <h2>Input article counts</h2>
             <input type="text" name="count" value="{{ old('count') }}">
-            <p class="count__error" style="color:red">{{ $errors->first( "keywords") }}</p>
+            <p class="count__error" style="color:red">{{ $errors->first( "count") }}</p>
             <input type="submit" value="submit">
         </form>
         @foreach($news as $data)
