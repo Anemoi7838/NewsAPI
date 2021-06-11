@@ -25,7 +25,7 @@ class NewsRequest extends FormRequest
     {
         return [
             'keywords' => 'required|string|max:20',
-            'count' => 'required|integer|max:20',
+            //'count' => 'required|integer|max:20',
         ];
     }
 }

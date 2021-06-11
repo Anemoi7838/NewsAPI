@@ -25,33 +25,36 @@ class NewsController extends Controller
     {
         $keywords = $request -> keywords;
         $sortBy = $request -> sortBy;
-        $count = $request -> count;
-        $news = $this->getNews($keywords,$sortBy,$count);
+        $method = $request -> method;
+        #$count = $request -> count;
+        $news = $this->getNews($keywords,$sortBy,$method);
         return view('index', compact('news'));
     }
     
-    public function getNews($keywords,$sortBy,$count)
+    public function getNews($keywords,$sortBy,$method)
     {
         try {
-            /*$keyword = str_replace("　", " ", $keywords);
+            $keyword = str_replace("　", " ", $keywords);
             $array = explode(" ",$keyword);
-            $key = "?";
+            $key = "%20";
             for ($i=0;$i<count($array);$i++){
                 if ( $i==0){
-                    $sentence="q=".$array[$i];
+                    $sentence = "q=".$array[$i];
+                    $keys = $sentence;
                 }else{
-                    $sentence="&q=".$array[$i];
+                    $sentence = $key.$method.$key.$array[$i];
+                    $keys = $keys.$sentence;
                 }
-                $key=$key.$sentence;
-            }*/
-            //$url = config('newsapi.news_api_url') . "everything".$key."&language=en&sortBy=".$sortBy."&apiKey=" . config('newsapi.news_api_key');
+                
+            }
+            $url = config('newsapi.news_api_url') . "everything?".$keys."&language=en&sortBy=".$sortBy."&apiKey=" . config('newsapi.news_api_key');
             
             //$url = config('newsapi.news_api_url') . "top-headlines?country=us&category=business&apiKey=" . config('newsapi.news_api_key');
-            $url = config('newsapi.news_api_url') . "everything?q=".$keywords."&language=en&sortBy=".$sortBy."&apiKey=" . config('newsapi.news_api_key');
+            //$url = config('newsapi.news_api_url') . "everything?q=".$keywords."&language=en&sortBy=".$sortBy."&apiKey=" . config('newsapi.news_api_key');
             Log::debug($url);
             
             $method = "GET";
-            $counts = $count;
+            $counts = 20;
 
             $client = new Client();
             $response = $client->request($method, $url);
