@@ -27,11 +27,10 @@ class NewsController extends Controller
         $sortBy = $request -> sortBy;
         $method = $request -> method;
         #$count = $request -> count;
-        $news = $this->getNews($keywords,$sortBy,$method);
+        $news = $this->getNews_keywords($keywords,$sortBy,$method);
         return view('index', compact('news'));
     }
-    
-    public function getNews($keywords,$sortBy,$method)
+    public function getNews_keywords($keywords,$sortBy,$method)
     {
         try {
             $keyword = str_replace("　", " ", $keywords);
@@ -65,19 +64,63 @@ class NewsController extends Controller
             $news = [];
 
             for ($id = 0; $id < $counts; $id++) {
+                if ( $articles['articles'][$id]['urlToImage'] == null){
+                        $thumbnail = "image/earth.jpg";
+                }else{
+                    $thumbnail =$articles['articles'][$id]['urlToImage'];
+                }
+                    
                 array_push($news, [
                     'name' => $articles['articles'][$id]['title'],
                     'url' => $articles['articles'][$id]['url'],
-                    'thumbnail' => $articles['articles'][$id]['urlToImage'],
+                    'thumbnail' => $thumbnail,
                     'content' => $articles['articles'][$id]['content']
                 ]);
             }
-        } catch (RequestException $e) {
+            
+            }catch (RequestException $e) {
             echo Psr7\Message::toString($e->getRequest());
             if ($e->hasResponse()) {
                 echo Psr7\Message::toString($e->getResponse());
             }
         }
+        return $news;
+    }
+    public function put(NewsRequest $request)
+    {
+        $category = $request -> category;
+        $news = $this->getNews_category($category);
+        return view('index', compact('news'));
+    }
+    public function getNews_category($category)
+    {
+            $url = config('newsapi.news_api_url') . "top-headlines?category=".$category."&country=us&apiKey=" . config('newsapi.news_api_key');
+            Log::debug($url);
+            $method = "GET";
+            $counts = 20;
+
+            $client = new Client();
+            $response = $client->request($method, $url);
+
+            $results = $response->getBody();
+            $articles = json_decode($results, true);
+
+            $news = [];
+
+            for ($id = 0; $id < $counts; $id++) {
+                if ( $articles['articles'][$id]['urlToImage'] == null){
+                        $thumbnail = "image/earth.jpg";
+                }else{
+                    $thumbnail =$articles['articles'][$id]['urlToImage'];
+                }
+                    
+                array_push($news, [
+                    'name' => $articles['articles'][$id]['title'],
+                    'url' => $articles['articles'][$id]['url'],
+                    'thumbnail' => $thumbnail,
+                    'content' => $articles['articles'][$id]['content']
+                ]);
+            }
         return $news;
     }
     public function store(News $favorite, Request $request)

@@ -23,9 +23,12 @@ class NewsRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'keywords' => 'required|string|max:20',
+        
+            $rules=[];
+            if($this->has('keywords')){
+                $rules['keywords'] = 'required|string|max:20';
+            }
+            return $rules;
             //'count' => 'required|integer|max:20',
-        ];
     }
 }

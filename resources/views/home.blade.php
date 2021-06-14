@@ -31,6 +31,18 @@
                             --->
                             <input type="submit" value="submit">
                         </form>
+                        <h2>Choose category</h2>
+                        <form method="POST" action="/put">
+                            @method('PUT')
+                            @csrf
+                            <input type="submit" name="category" value="business">
+                            <input type="submit" name="category" value="entertainment">
+                            <input type="submit" name="category" value="general">
+                            <input type="submit" name="category" value="health">
+                            <input type="submit" name="category" value="science">
+                            <input type="submit" name="category" value="sports">
+                            <input type="submit" name="category" value="technology">
+                        </form>
                         <h2>Favorite articles</h2>
                      @foreach ($favorites as $favorite)
                         <div class='post'>

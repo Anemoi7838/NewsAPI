@@ -28,6 +28,18 @@
             <p class="count__error" style="color:red">{{ $errors->first( "count") }}</p>--->
             <input type="submit" value="submit">
         </form>
+        <h2>Choose category</h2>
+        <form method="POST" action="/put">
+            @method('PUT')
+            @csrf
+            <input type="submit" name="category" value="business">
+            <input type="submit" name="category" value="entertainment">
+            <input type="submit" name="category" value="general">
+            <input type="submit" name="category" value="health">
+            <input type="submit" name="category" value="science">
+            <input type="submit" name="category" value="sports">
+            <input type="submit" name="category" value="technology">
+        </form>
         @foreach($news as $data)
         <div class="card-body pt-0 pb-2">
             <h3 class="h5 card-title">
