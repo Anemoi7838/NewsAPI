@@ -2,15 +2,21 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta http-equiv="X=UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, intial-scale=1">
         <title>News</title>
-
+        <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="icon" type="image/x-icon" href="./favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"> 
+        
         <!-- Fonts -->
         <link rel="canonical" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
+    @include("navbar")
     <div class="container ">
+        <h1>" "</h1>
         <h1>{{ Auth::user()->name }}さんでログイン中</h1><a href="/home">HOME</a>
         <?php $id=Auth::id(); ?>
         <form method="GET" action="/search">
@@ -42,7 +48,7 @@
         </form>
         @foreach($news as $data)
         <div class="card-body pt-0 pb-2">
-            <h3 class="h5 card-title">
+            <h1 class="h3 card-title">
                 <hr size=3 color="black">
                 <a href="{{ $data['url'] }}">{{ $data['name'] }}</a>
                 <form action="/store" method="POST">
@@ -52,7 +58,7 @@
                     <input type="hidden"name="news[url]" value="{{ $data['url'] }}">
                     <input type="submit" value="favorite">
                 </form>
-            </h3>
+            </h1>
             <div class="card-text">
                 <p>{{$data['content']}}</p>
                 <img src="{{$data['thumbnail']}}" width="500" height="400">
