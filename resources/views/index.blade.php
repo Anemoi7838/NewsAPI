@@ -14,6 +14,9 @@
         <link rel="canonical" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
     <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     @include("navbar")
     <div class="container ">
         <h1>" "</h1>
@@ -35,9 +38,7 @@
             <input type="submit" value="submit">
         </form>
         <h2>Choose category</h2>
-        <form method="POST" action="/put">
-            @method('PUT')
-            @csrf
+        <form method="GET" action="/put">
             <input type="submit" name="category" value="business">
             <input type="submit" name="category" value="entertainment">
             <input type="submit" name="category" value="general">
@@ -65,7 +66,18 @@
             </div>
         </div>
         @endforeach
-       
+        <script type="text/javascript">
+            @if (session('msg_success'))
+                $(function () {
+                        toastr.success('{{ session('msg_success') }}');
+                });
+            @endif
+             @if (session('msg_danger'))
+                $(function () {
+                        toastr.warning('{{ session('msg_danger') }}');
+                });
+            @endif
+        </script>
     </div>
     </body>
 </html>

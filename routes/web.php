@@ -26,4 +26,5 @@ Auth::routes();
 Route::post("/store","NewsController@store");
 Route::delete('/delete/{favorite}',"NewsController@delete");
 Route::get('/home', 'HomeController@index')->name('home');
-Route::put('/put',"NewsController@put");
+Route::get('/category',"NewsController@category");
+Route::post('/puts',"NewsController@puts");

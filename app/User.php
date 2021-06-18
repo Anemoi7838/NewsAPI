@@ -36,4 +36,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function favorite($userId)
+    {
+        $exist = $this->is_favorite($micropostId);
+    }
+
+    
+    
+    public function is_favorite($userId)
+    {
+        return $this->favorite()->where("url",$userId)->exists();
+    }
 }

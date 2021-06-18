@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -5,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <!---<div class="card-header">Dashboard</div>--->
 
                 <div class="card-body">
                     @if (session('status'))
@@ -32,9 +33,7 @@
                             <input type="submit" value="submit">
                         </form>
                         <h2>Choose category</h2>
-                        <form method="POST" action="/put">
-                            @method('PUT')
-                            @csrf
+                        <form method="GET" action="/category">
                             <input type="submit" name="category" value="business">
                             <input type="submit" name="category" value="entertainment">
                             <input type="submit" name="category" value="general">
@@ -72,4 +71,7 @@
         </div>
     </div>
 </div>
+</body>
+</html>
+    
 @endsection

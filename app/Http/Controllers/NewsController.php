@@ -23,6 +23,7 @@ class NewsController extends Controller
     }
     public function search(NewsRequest $request)
     {
+        //dd($request->toArray());
         $keywords = $request -> keywords;
         $sortBy = $request -> sortBy;
         $method = $request -> method;
@@ -60,7 +61,6 @@ class NewsController extends Controller
 
             $results = $response->getBody();
             $articles = json_decode($results, true);
-
             $news = [];
 
             for ($id = 0; $id < $counts; $id++) {
@@ -86,7 +86,13 @@ class NewsController extends Controller
         }
         return $news;
     }
-    public function put(NewsRequest $request)
+    public function category(NewsRequest $request)
+    {
+        $category = $request -> category;
+        $news = $this->getNews_category($category);
+        return view('index', compact('news'));
+    }
+     public function puts(NewsRequest $request)
     {
         $category = $request -> category;
         $news = $this->getNews_category($category);
@@ -125,13 +131,27 @@ class NewsController extends Controller
     }
     public function store(News $favorite, Request $request)
     {
-        //dd($request->all());
-        
-        $input=$request["news"];
-        //$fav->timestamps = false; 
-        $favorite->fill($input)->save();
-        return redirect('/home');
-        #return view('index')->with(['favorite' => $fav->get()]);
+        $post = News::all();
+        $counts = $post->count();
+        //dd($request->toArray());
+        $url = $request->news['url'];
+        for ($id = 0;$id<$counts; $id++){
+            if ($post[$id]['url'] != $url){
+                if ( $id == $counts-1 ){
+                     $input=$request["news"];
+                    //$fav->timestamps = false; 
+                     $favorite->fill($input)->save();
+                    session()->flash('msg_success', '登録しました');
+                    return redirect()->back();
+                    #return view('index')->with(['favorite' => $fav->get()]);
+                }
+                continue;
+                
+            }else{
+                  session()->flash('msg_danger', 'すでに登録済みです');
+                  return redirect()->back();
+            }
+        }
     }
     public function delete(News $favorite)
     {
