@@ -57,10 +57,13 @@
                                     function deleteNews(e) {
                                     'use strict';
  
-                                    if (confirm('本当に削除していいですか?')) {
-                                        document.getElementById('form_delete').submit();
+                                    if (!window.confirm('本当に削除していいですか?')) {
+                                        window.alert('キャンセルされました');
+                                        return false;
                                         }
+                                        document.deleteform.submit();
                                     }
+                                    
                                     </script>
                                 </form>    
                             @endif
