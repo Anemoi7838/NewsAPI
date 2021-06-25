@@ -11,4 +11,8 @@ class News extends Model
     public $timestamps = false;
     protected $fillable=["name","title","url",];
     
+    public function getByLimit(int $limit_count=10)
+    {
+        return $this->paginate($limit_count);
+    }
 }

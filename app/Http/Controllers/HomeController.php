@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index(News $favorite)
     {
-        return view('home')->with(['favorites'=> $favorite -> get()]);
+        return view('home')->with(['favorites'=> $favorite -> getByLimit()]);
     }
     
 

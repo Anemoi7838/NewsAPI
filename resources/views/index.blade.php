@@ -38,7 +38,7 @@
             <input type="submit" value="submit">
         </form>
         <h2>Choose category</h2>
-        <form method="GET" action="/put">
+        <form method="GET" action="/category">
             <input type="submit" name="category" value="business">
             <input type="submit" name="category" value="entertainment">
             <input type="submit" name="category" value="general">
