@@ -1,0 +1,100 @@
+2021-06-27T04:17:56.103893+00:00 heroku[router]: at=info method=GET path="/css/app.css" host=thawing-fortress-57866.herokuapp.com request_id=9f0cf90d-d5cd-4a30-8adf-aa315028f8f4 fwd="160.26.121.63" dyno=web.1 connect=1ms service=14ms status=200 bytes=183663 protocol=https
+2021-06-27T04:17:56.110504+00:00 app[web.1]: 10.102.247.55 - - [27/Jun/2021:13:17:56 +0900] "GET /js/app.js HTTP/1.1" 200 1477051 "https://thawing-fortress-57866.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:17:56.159147+00:00 heroku[router]: at=info method=GET path="/js/app.js" host=thawing-fortress-57866.herokuapp.com request_id=8ef2575b-b49e-4582-a0a3-66bbf9b08c47 fwd="160.26.121.63" dyno=web.1 connect=1ms service=81ms status=200 bytes=1477303 protocol=https
+2021-06-27T04:17:57.632882+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=thawing-fortress-57866.herokuapp.com request_id=47d1d18b-c310-4477-870b-feb502061fb1 fwd="160.26.121.63" dyno=web.1 connect=1ms service=5ms status=200 bytes=231 protocol=https
+2021-06-27T04:17:57.637495+00:00 app[web.1]: 10.102.247.55 - - [27/Jun/2021:13:17:57 +0900] "GET /favicon.ico HTTP/1.1" 200 - "https://thawing-fortress-57866.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:19:11.192523+00:00 app[api]: Set DB_DATABASE config vars by user mizuki05247838@gmail.com
+2021-06-27T04:19:11.192523+00:00 app[api]: Release v30 created by user mizuki05247838@gmail.com
+2021-06-27T04:19:14.259668+00:00 heroku[web.1]: Restarting
+2021-06-27T04:19:14.273975+00:00 heroku[web.1]: State changed from up to starting
+2021-06-27T04:19:15.413095+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2021-06-27T04:19:15.537967+00:00 app[web.1]: SIGTERM received, attempting graceful shutdown...
+2021-06-27T04:19:15.537975+00:00 app[web.1]: Stopping php-fpm...
+2021-06-27T04:19:15.539361+00:00 app[web.1]: Stopping httpd gracefully...
+2021-06-27T04:19:15.539634+00:00 app[web.1]: Stopping httpd...
+2021-06-27T04:19:15.821213+00:00 app[web.1]: Shutdown complete.
+2021-06-27T04:19:15.864162+00:00 heroku[web.1]: Process exited with status 143
+2021-06-27T04:19:16.952773+00:00 heroku[web.1]: Starting process with command `vendor/bin/heroku-php-apache2 public/`
+2021-06-27T04:19:20.803164+00:00 app[web.1]: DOCUMENT_ROOT changed to 'public/'
+2021-06-27T04:19:20.906924+00:00 app[web.1]: Detected 536870912 Bytes of RAM
+2021-06-27T04:19:20.962229+00:00 app[web.1]: PHP memory_limit is 128M Bytes
+2021-06-27T04:19:20.995625+00:00 app[web.1]: Starting php-fpm with 4 workers...
+2021-06-27T04:19:21.155181+00:00 app[web.1]: Starting httpd...
+2021-06-27T04:19:21.886443+00:00 heroku[web.1]: State changed from starting to up
+2021-06-27T04:28:20.317343+00:00 app[api]: Release v31 created by user mizuki05247838@gmail.com
+2021-06-27T04:28:20.317343+00:00 app[api]: Set DB_USERNAME config vars by user mizuki05247838@gmail.com
+2021-06-27T04:28:20.693976+00:00 heroku[web.1]: Restarting
+2021-06-27T04:28:20.696479+00:00 heroku[web.1]: State changed from up to starting
+2021-06-27T04:28:22.197223+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2021-06-27T04:28:22.258984+00:00 app[web.1]: Stopping httpd...
+2021-06-27T04:28:22.260499+00:00 app[web.1]: SIGTERM received, attempting graceful shutdown...
+2021-06-27T04:28:22.261100+00:00 app[web.1]: Stopping php-fpm...
+2021-06-27T04:28:22.280989+00:00 app[web.1]: Shutdown complete.
+2021-06-27T04:28:22.381882+00:00 heroku[web.1]: Process exited with status 143
+2021-06-27T04:28:23.759700+00:00 heroku[web.1]: Starting process with command `vendor/bin/heroku-php-apache2 public/`
+2021-06-27T04:28:30.296404+00:00 app[web.1]: DOCUMENT_ROOT changed to 'public/'
+2021-06-27T04:28:30.752743+00:00 app[web.1]: Detected 536870912 Bytes of RAM
+2021-06-27T04:28:30.823601+00:00 app[web.1]: PHP memory_limit is 128M Bytes
+2021-06-27T04:28:30.871349+00:00 app[web.1]: Starting php-fpm with 4 workers...
+2021-06-27T04:28:31.521305+00:00 app[web.1]: Starting httpd...
+2021-06-27T04:28:32.458394+00:00 heroku[web.1]: State changed from starting to up
+2021-06-27T04:28:53.317689+00:00 app[api]: Release v32 created by user mizuki05247838@gmail.com
+2021-06-27T04:28:53.317689+00:00 app[api]: Set DB_PASSWORD config vars by user mizuki05247838@gmail.com
+2021-06-27T04:28:53.620762+00:00 heroku[web.1]: Restarting
+2021-06-27T04:28:53.640462+00:00 heroku[web.1]: State changed from up to starting
+2021-06-27T04:28:54.942021+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2021-06-27T04:28:55.046365+00:00 app[web.1]: SIGTERM received, attempting graceful shutdown...
+2021-06-27T04:28:55.047464+00:00 app[web.1]: Stopping php-fpm...
+2021-06-27T04:28:55.052402+00:00 app[web.1]: Stopping httpd gracefully...
+2021-06-27T04:28:55.053214+00:00 app[web.1]: Stopping httpd...
+2021-06-27T04:28:55.215346+00:00 app[web.1]: Shutdown complete.
+2021-06-27T04:28:55.287006+00:00 heroku[web.1]: Process exited with status 143
+2021-06-27T04:28:55.888566+00:00 heroku[web.1]: Starting process with command `vendor/bin/heroku-php-apache2 public/`
+2021-06-27T04:29:00.496353+00:00 app[web.1]: DOCUMENT_ROOT changed to 'public/'
+2021-06-27T04:29:00.611968+00:00 app[web.1]: Detected 536870912 Bytes of RAM
+2021-06-27T04:29:00.667943+00:00 app[web.1]: PHP memory_limit is 128M Bytes
+2021-06-27T04:29:00.688503+00:00 app[web.1]: Starting php-fpm with 4 workers...
+2021-06-27T04:29:00.904615+00:00 app[web.1]: Starting httpd...
+2021-06-27T04:29:01.052444+00:00 heroku[web.1]: State changed from starting to up
+2021-06-27T04:29:17.335760+00:00 app[api]: Starting process with command `php artisan migrate` by user mizuki05247838@gmail.com
+2021-06-27T04:29:19.740600+00:00 heroku[run.9779]: State changed from starting to up
+2021-06-27T04:29:19.905515+00:00 heroku[run.9779]: Awaiting client
+2021-06-27T04:29:19.930592+00:00 heroku[run.9779]: Starting process with command `php artisan migrate`
+2021-06-27T04:29:27.714073+00:00 heroku[run.9779]: Process exited with status 0
+2021-06-27T04:29:27.787557+00:00 heroku[run.9779]: State changed from up to complete
+2021-06-27T04:29:49.559059+00:00 app[web.1]: 10.79.218.111 - - [27/Jun/2021:13:29:49 +0900] "GET / HTTP/1.1" 200 5012 "https://dashboard.heroku.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:29:49.560074+00:00 heroku[router]: at=info method=GET path="/" host=thawing-fortress-57866.herokuapp.com request_id=c16a47ce-0ba0-4c7c-b8a0-0d4f011d802c fwd="160.26.121.63" dyno=web.1 connect=0ms service=218ms status=200 bytes=6081 protocol=https
+2021-06-27T04:29:54.698352+00:00 app[web.1]: 10.79.218.111 - - [27/Jun/2021:13:29:54 +0900] "POST /login HTTP/1.1" 302 426 "https://thawing-fortress-57866.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:29:54.698847+00:00 heroku[router]: at=info method=POST path="/login" host=thawing-fortress-57866.herokuapp.com request_id=de46661b-fbdf-457d-98cc-ccc9cbd3da80 fwd="160.26.121.63" dyno=web.1 connect=0ms service=139ms status=302 bytes=1548 protocol=https
+2021-06-27T04:29:54.926313+00:00 app[web.1]: 10.79.218.111 - - [27/Jun/2021:13:29:54 +0900] "GET / HTTP/1.1" 200 5306 "https://thawing-fortress-57866.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:29:54.927191+00:00 heroku[router]: at=info method=GET path="/" host=thawing-fortress-57866.herokuapp.com request_id=935a2ebf-c6c9-4514-b948-7709ef628d2b fwd="160.26.121.63" dyno=web.1 connect=0ms service=43ms status=200 bytes=6365 protocol=https
+2021-06-27T04:29:58.052212+00:00 app[web.1]: 10.79.218.111 - - [27/Jun/2021:13:29:58 +0900] "GET /register HTTP/1.1" 200 5054 "https://thawing-fortress-57866.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:29:58.052246+00:00 heroku[router]: at=info method=GET path="/register" host=thawing-fortress-57866.herokuapp.com request_id=43e72929-67e6-4201-a0cf-5e7fc05d5bfc fwd="160.26.121.63" dyno=web.1 connect=1ms service=43ms status=200 bytes=6119 protocol=https
+2021-06-27T04:30:21.751853+00:00 heroku[router]: at=info method=POST path="/register" host=thawing-fortress-57866.herokuapp.com request_id=3b757b54-0025-4f7f-bc4f-1d038ef10d54 fwd="160.26.121.63" dyno=web.1 connect=0ms service=205ms status=302 bytes=1570 protocol=https
+2021-06-27T04:30:21.752287+00:00 app[web.1]: 10.79.218.111 - - [27/Jun/2021:13:30:21 +0900] "POST /register HTTP/1.1" 302 442 "https://thawing-fortress-57866.herokuapp.com/register" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:30:22.026238+00:00 app[web.1]: 10.79.218.111 - - [27/Jun/2021:13:30:21 +0900] "GET /home HTTP/1.1" 200 5532 "https://thawing-fortress-57866.herokuapp.com/register" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:30:22.027538+00:00 heroku[router]: at=info method=GET path="/home" host=thawing-fortress-57866.herokuapp.com request_id=16ff3dd1-f0e1-4835-b789-b07b5382ba73 fwd="160.26.121.63" dyno=web.1 connect=0ms service=88ms status=200 bytes=6585 protocol=https
+2021-06-27T04:30:33.612762+00:00 app[web.1]: 10.79.218.111 - - [27/Jun/2021:13:30:33 +0900] "GET /search?method=AND&keywords=meteorology&sortBy=relevancy HTTP/1.1" 500 1558 "https://thawing-fortress-57866.herokuapp.com/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:30:33.613019+00:00 heroku[router]: at=info method=GET path="/search?method=AND&keywords=meteorology&sortBy=relevancy" host=thawing-fortress-57866.herokuapp.com request_id=77b08819-e14e-4191-993d-57c79fd279b4 fwd="160.26.121.63" dyno=web.1 connect=5ms service=166ms status=500 bytes=2633 protocol=https
+2021-06-27T04:40:32.004483+00:00 heroku[router]: at=info method=GET path="/register" host=thawing-fortress-57866.herokuapp.com request_id=9c837a9f-c7ca-46bc-8be6-03f2e9b47ce5 fwd="160.26.121.63" dyno=web.1 connect=0ms service=277ms status=302 bytes=1562 protocol=https
+2021-06-27T04:40:32.008486+00:00 app[web.1]: 10.30.89.33 - - [27/Jun/2021:13:40:31 +0900] "GET /register HTTP/1.1" 302 442 "https://thawing-fortress-57866.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:44:30.995678+00:00 heroku[router]: at=info method=GET path="/home" host=thawing-fortress-57866.herokuapp.com request_id=d023d8c6-0621-4a7f-9be7-19a9a4d04dcd fwd="160.26.121.63" dyno=web.1 connect=0ms service=158ms status=200 bytes=6593 protocol=https
+2021-06-27T04:44:30.995756+00:00 app[web.1]: 10.63.104.194 - - [27/Jun/2021:13:44:30 +0900] "GET /home HTTP/1.1" 200 5532 "https://thawing-fortress-57866.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:44:31.304511+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=thawing-fortress-57866.herokuapp.com request_id=933bdc8e-89f4-4bf4-bf32-a39e270489bc fwd="160.26.121.63" dyno=web.1 connect=0ms service=2ms status=200 bytes=231 protocol=https
+2021-06-27T04:44:31.306394+00:00 app[web.1]: 10.63.104.194 - - [27/Jun/2021:13:44:31 +0900] "GET /favicon.ico HTTP/1.1" 200 - "https://thawing-fortress-57866.herokuapp.com/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:44:34.465935+00:00 heroku[router]: at=info method=GET path="/search?method=AND&keywords=meteorology&sortBy=relevancy" host=thawing-fortress-57866.herokuapp.com request_id=8682a7be-9981-484f-9cc0-c0a24f917dd3 fwd="160.26.121.63" dyno=web.1 connect=2ms service=172ms status=500 bytes=2627 protocol=https
+2021-06-27T04:44:34.466354+00:00 app[web.1]: 10.63.104.194 - - [27/Jun/2021:13:44:34 +0900] "GET /search?method=AND&keywords=meteorology&sortBy=relevancy HTTP/1.1" 500 1558 "https://thawing-fortress-57866.herokuapp.com/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+2021-06-27T04:58:50.613451+00:00 app[api]: Starting process with command `php artisan migrate:refresh` by user mizuki05247838@gmail.com
+2021-06-27T04:58:53.248589+00:00 heroku[run.6977]: Awaiting client
+2021-06-27T04:58:53.271233+00:00 heroku[run.6977]: Starting process with command `php artisan migrate:refresh`
+2021-06-27T04:58:53.330061+00:00 heroku[run.6977]: State changed from starting to up
+2021-06-27T04:59:00.875744+00:00 heroku[run.6977]: Process exited with status 0
+2021-06-27T04:59:00.931595+00:00 heroku[run.6977]: State changed from up to complete
+2021-06-27T05:16:36.980934+00:00 heroku[web.1]: Idling
+2021-06-27T05:16:36.982971+00:00 heroku[web.1]: State changed from up to down
+2021-06-27T05:16:38.508765+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2021-06-27T05:16:38.576326+00:00 app[web.1]: Stopping httpd...
+2021-06-27T05:16:38.577266+00:00 app[web.1]: SIGTERM received, attempting graceful shutdown...
+2021-06-27T05:16:38.577479+00:00 app[web.1]: Stopping php-fpm...
+2021-06-27T05:16:38.591337+00:00 app[web.1]: Shutdown complete.
+2021-06-27T05:16:38.689160+00:00 heroku[web.1]: Process exited with status 143
