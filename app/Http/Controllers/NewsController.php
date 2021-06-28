@@ -133,22 +133,22 @@ class NewsController extends Controller
     {
         $post = News::all();
         $counts = $post->count();
-        //dd($request->toArray());
         $url = $request->news['url'];
         for ($id = 0;$id<$counts; $id++){
             if ($post[$id]['url'] != $url){
                 if ( $id == $counts-1 ){
                      $input=$request["news"];
-                    //$fav->timestamps = false; 
                      $favorite->fill($input)->save();
                     session()->flash('msg_success', '登録しました');
-                    return redirect()->back();
+                    //return redirect()->back();
+                    return redirect("/home");
                 }
                 continue;
                 
             }else{
                   session()->flash('msg_danger', 'すでに登録済みです');
                   return redirect()->back();
+                
             }
         }
     }
