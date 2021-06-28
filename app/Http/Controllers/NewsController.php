@@ -143,7 +143,6 @@ class NewsController extends Controller
                      $favorite->fill($input)->save();
                     session()->flash('msg_success', '登録しました');
                     return redirect()->back();
-                    #return view('index')->with(['favorite' => $fav->get()]);
                 }
                 continue;
                 
