@@ -139,14 +139,14 @@ class NewsController extends Controller
                 if ( $id == $counts-1 ){
                      $input=$request["news"];
                      $favorite->fill($input)->save();
-                    session()->flash('msg_success', '登録しました');
-                    //return redirect()->back();
-                    return redirect("/home");
+                     $favorites=$favorite;
+                     //session()->flash('msg_success', '登録しました');
+                     return redirect()->back();
                 }
                 continue;
                 
             }else{
-                  session()->flash('msg_danger', 'すでに登録済みです');
+                  //session()->flash('msg_danger', 'すでに登録済みです');
                   return redirect()->back();
                 
             }
