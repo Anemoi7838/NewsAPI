@@ -141,8 +141,7 @@ class NewsController extends Controller
                      $favorite->fill($input)->save();
                      $favorites=$favorite;
                      session()->flash('msg_success', '登録しました');
-                     //return redirect()->back();
-                     return redirect("/home");
+                     return redirect()->back("/home");
                 }
                 continue;
                 
@@ -159,5 +158,5 @@ class NewsController extends Controller
         $favorite->delete();
         return redirect("/home");
     }
-   
+    
 }
