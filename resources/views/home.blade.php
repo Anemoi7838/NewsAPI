@@ -68,7 +68,9 @@
                             @endif
                     @endforeach
                 </div>
-                
+                <div class="paginate">
+                    {{ $favorites->links() }}
+                </div>
             </div>
         </div>
     </div>
