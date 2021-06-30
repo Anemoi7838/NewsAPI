@@ -43,8 +43,7 @@
                             <input type="submit" name="category" value="technology">
                         </form>
                         <h2>Favorite articles</h2>
-                     @foreach ($favorites as $favorite)
-                        <div class='post'>
+                    @foreach ($favorites as $favorite)
                             <?php $cid=Auth::id();$aid=$favorite->name;?>
                             @if ( $cid==$aid )
                                 <a href="{{ $favorite->url}}">{{ $favorite->title }}</a>
@@ -67,7 +66,6 @@
                                     </script>
                                 </form>    
                             @endif
-                        </div>
                     @endforeach
                 </div>
                 <div class="paginate">

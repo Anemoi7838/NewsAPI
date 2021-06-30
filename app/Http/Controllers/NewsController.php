@@ -6,7 +6,7 @@ use App\Http\Requests\NewsRequest;
 use App\News;
 
 use Illuminate\Support\Facades\Log;
-
+use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
@@ -129,28 +129,33 @@ class NewsController extends Controller
             }
         return $news;
     }
-    public function store(News $favorite, NewsRequest $request)
+    public function store(News $favorite, Request $request)
     {
         $post = News::all();
         $counts = $post->count();
+        $id=Auth::id();
         $url = $request->news['url'];
-        for ($id = 0;$id<$counts; $id++){
-            if ($post[$id]['url'] != $url){
-                if ( $id == $counts-1 ){
+        for ($i = 0;$i<$counts; $i++){
+            if ($post[$i]['name'] == $id && $post[$i]['url'] != $url){
+                if ( $i == $counts-1 ){
                      $input=$request["news"];
                      $favorite->fill($input)->save();
                      session()->flash('msg_success', '登録しました');
                      return redirect()->back();
                 }
-                continue;
-                
-            }else{
-                  session()->flash('msg_danger', 'すでに登録済みです');
-                  return redirect()->back();
-                
+            }elseif($post[$i]['name'] == $id && $post[$i]['url'] == $url){
+                    session()->flash('msg_danger', 'すでに登録済みです');
+                    return redirect()->back();
+            }
+            elseif($post[$i]['name'] != $id && $i==$counts-1 ){
+                $input=$request["news"];
+                $favorite->fill($input)->save();
+                session()->flash('msg_success', '登録しました');
+                return redirect()->back();
             }
         }
     }
+    
     public function delete(News $favorite)
     {
         //dd($favorite->all());
