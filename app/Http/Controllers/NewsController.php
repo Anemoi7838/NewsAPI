@@ -133,9 +133,14 @@ class NewsController extends Controller
     {
         $post = News::all();
         $counts = $post->count();
-        dd($counts);
         $id=Auth::id();
         $url = $request->news['url'];
+        if($counts==0){
+            $input=$request["news"];
+            $favorite->fill($input)->save();
+            session()->flash('msg_success', '登録しました');
+            return redirect()->back();
+        }
         for ($i = 0;$i<$counts; $i++){
             if ($post[$i]['name'] == $id && $post[$i]['url'] != $url){
                 if ( $i == $counts-1 ){
