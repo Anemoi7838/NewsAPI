@@ -129,7 +129,7 @@ class NewsController extends Controller
             }
         return $news;
     }
-    public function store(News $favorite, Request $request)
+    public function store(News $favorite, NewsRequest $request)
     {
         $post = News::all();
         $counts = $post->count();
@@ -139,7 +139,6 @@ class NewsController extends Controller
                 if ( $id == $counts-1 ){
                      $input=$request["news"];
                      $favorite->fill($input)->save();
-                     $favorites=$favorite;
                      session()->flash('msg_success', '登録しました');
                      return redirect()->back();
                 }
