@@ -132,8 +132,8 @@ class NewsController extends Controller
     public function store(News $favorite, Request $request)
     {
         $post = News::all();
-        dd($post->all());
         $counts = $post->count();
+        dd($counts);
         $id=Auth::id();
         $url = $request->news['url'];
         for ($i = 0;$i<$counts; $i++){
