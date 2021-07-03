@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\News;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +23,22 @@ class HomeController extends Controller
      */
     public function index(News $favorite)
     {
-        return view('home')->with(['favorites'=> $favorite -> getByLimit()]);
+        $id=Auth::id();
+        $post = News::all();
+        $counts = $post->count();
+        $ff=[];
+        for ($i = 0;$i<$counts; $i++){
+            if ($post[$i]['name'] == $id){
+                array_push($ff, [
+                    'id' => $post[$i]['id'],
+                    'name' => $post[$i]['name'],
+                    'url' => $post[$i]['url'],
+                    'title' => $post[$i]['title']
+                ]);
+            }
+        }
+        //return view('home')->with(['favorites'=> $ff -> getByLimit()]);
+        return view('home')->with(['favorites'=> $ff ]);
     }
     
 

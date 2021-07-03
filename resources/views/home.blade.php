@@ -43,11 +43,10 @@
                             <input type="submit" name="category" value="technology">
                         </form>
                         <h2>Favorite articles</h2>
-                    @foreach ($favorites as $favorite)
-                            <?php $cid=Auth::id();$aid=$favorite->name;?>
-                            @if ( $cid==$aid )
-                                <a href="{{ $favorite->url}}">{{ $favorite->title }}</a>
-                                <form action="/delete/{{ $favorite->id }}" id="form_delete"  method="post" >
+                        <?php $counts=count($favorites); ?>
+                        @for($i=0;$i<$counts;$i++)
+                            <a href="{{ $favorites[$i]['url']}}">{{ $favorites[$i]['title'] }}</a><br>
+                            <form action="/delete/{{ $favorites[$i]['id'] }}" id="form_delete"  method="post" >
                                     @csrf
                                     @method('DELETE')
                                     <input type="submit" style="display:none" value="delete">
@@ -64,13 +63,10 @@
                                     }
                                     
                                     </script>
-                                </form>    
-                            @endif
-                    @endforeach
-                </div>
-                <div class="paginate">
-                    {{ $favorites->links() }}
-                </div>
+                                </form>
+                        @endfor
+                    
+                
             </div>
         </div>
     </div>

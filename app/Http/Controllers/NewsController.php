@@ -161,7 +161,6 @@ class NewsController extends Controller
             }
         }
     }
-    
     public function delete(News $favorite)
     {
         //dd($favorite->all());
