@@ -26,7 +26,7 @@ Favorite articlesの下にお気に入りの記事が表示されます。</p>
 ニュースタイトルをクリックすると、情報元にとび、内容が確認できます。<br>
 その下のfavoriteというボタンをクリックすることで、お気に入り記事として、登録され、トップ画面で表示されます。</p>
 <h2>URL</h2>
-<a herf="https://thawing-fortress-57866.herokuapp.com/">
+<a herf="https://thawing-fortress-57866.herokuapp.com/">https://thawing-fortress-57866.herokuapp.com/</a>
 <h2>使用技術</h2>
 <li>HTML/CSS</li>
 <li>PHP</li>
