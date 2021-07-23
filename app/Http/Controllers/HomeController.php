@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 use App\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Pagination\LengthAwarePaginator;
 class HomeController extends Controller
+
+
 {
     /**
      * Create a new controller instance.
@@ -38,6 +41,7 @@ class HomeController extends Controller
             }
         }
         //return view('home')->with(['favorites'=> $ff -> getByLimit()]);
+        
         return view('home')->with(['favorites'=> $ff ]);
     }
     

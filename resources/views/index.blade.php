@@ -23,20 +23,22 @@
         <h1>{{ Auth::user()->name }}さんでログイン中</h1><a href="/home">HOME</a>
         <?php $id=Auth::id(); ?>
         <form method="GET" action="/search">
-            <h2>Input keywords</h2>
+            <h2>1.Input keywords</h2>
             <input type="radio" name="method" value="AND" checked="checked">AND
             <input type="radio" name="method" value="OR">OR
             <input type="text" name="keywords" value="{{ old('keywords') }}" ></br>
             <p class="keywords__error" style="color:red">{{ $errors->first( "keywords") }}</p>
-            <h2>Select option</h2>
+            <h2>2.Select option</h2>
             <input type="radio" name="sortBy" value="relevancy" checked="checked">relevancy
             <input type="radio" name="sortBy" value="popularity">popularity
             <input type="radio" name="sortBy" value="publishedAt">publishedAt<br>
             <!---<h2>Input article counts</h2>
             <input type="text" name="count" value="{{ old('count') }}">
             <p class="count__error" style="color:red">{{ $errors->first( "count") }}</p>--->
+            <h2>3.Push submit button</h2>
             <input type="submit" value="submit">
         </form>
+        <hr color="black" width="100%" size="10">
         <h2>Choose category</h2>
         <form method="GET" action="/category">
             <input type="submit" name="category" value="business">
@@ -47,6 +49,7 @@
             <input type="submit" name="category" value="sports">
             <input type="submit" name="category" value="technology">
         </form>
+        <hr color="black" width="100%" size="10">
         @foreach($news as $data)
         <div class="card-body pt-0 pb-2">
             <h1 class="h3 card-title">
