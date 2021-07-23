@@ -38,7 +38,8 @@
             <h2>3.Push submit button</h2>
             <input type="submit" value="submit">
         </form>
-        <hr color="black" width="100%" size="10">
+        <h1></h1>
+        <h2>OR</h2>
         <h2>Choose category</h2>
         <form method="GET" action="/category">
             <input type="submit" name="category" value="business">
