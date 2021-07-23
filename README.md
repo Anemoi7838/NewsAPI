@@ -6,23 +6,24 @@
 <h2>使い方</h2>
 <h3>ログイン画面</h3>
 <img src="https://github.com/Anemoi7838/NewsAPI/blob/master/img/readme_01.PNG">
-<p>アプリケーションを起動すると、ログイン画面になります。
-ここで、ログインしてください。はじめての方は、右上のRegisterで登録してください。
-また、デフォルトでEmail：Test@gmail.com、PW：hogehogeというユーザがありますので、こちらでログインもできます。</p>
+<p>アプリケーションを起動すると、ログイン画面になります。<br>
+ここでログインしてください。はじめての方は、右上のRegisterで登録してください。<br>
+また、デフォルトでEmail：Test@gmail.com、PW：hogehogeというユーザがありますので、こちらでもログインできます。</p>
 
 <h3>トップ画面</h3>
 <img src="https://github.com/Anemoi7838/NewsAPI/blob/master/img/readme_02.PNG">
-<p>Input keywordsに検索したいキーワード(英単語)を入力します。
-また、複数検索も可能で、スペースを空けてキーワードを入力してください。
-左のラジオボタンでAND検索かOR検索を選択できます。
-最後に、submitというボタンをクリックすると検索されます。
-カテゴリー検索もでき、business、entertainment、general、health、science、sports、technologyから選択できます。
+<p>Input keywordsに検索したいキーワード(英単語)を入力します。<br>
+また、複数検索も可能で、スペースを空けてキーワードを入力してください。<br>
+左のラジオボタンでAND検索かOR検索を選択できます。<br>
+Select optionでは、relevancyは、そのキーワードで最も関連性が高いニュース、popularityは、最も閲覧されている、publishedAtは、最も新しいニュースが先頭に表示されます。<br>
+最後に、submitというボタンをクリックすると検索されます。<br>
+カテゴリー検索もでき、business、entertainment、general、health、science、sports、technologyから選択できます。<br>
 Favorite articlesの下にお気に入りの記事が表示されます。</p>
 
 <h3>検索、結果画面</h3>
 <img src="https://github.com/Anemoi7838/NewsAPI/blob/master/img/readme_03.PNG">
-<p>先ほどのキーワードに関するニュースが20記事表示されます。
-ニュースタイトルをクリックすると、情報元にとび、内容が確認できます。
+<p>先ほどのキーワードに関するニュースが20記事表示されます。<br>
+ニュースタイトルをクリックすると、情報元にとび、内容が確認できます。<br>
 その下のfavoriteというボタンをクリックすることで、お気に入り記事として、登録され、トップ画面で表示されます。</p>
 <h2>URL</h2>
 <p></p>
