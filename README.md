@@ -29,9 +29,9 @@ Favorite articlesの下にお気に入りの記事が表示されます。</p>
 <a href="https://thawing-fortress-57866.herokuapp.com/">https://thawing-fortress-57866.herokuapp.com/</a>
 <h2>使用技術</h2>
 <li>HTML/CSS</li>
-<li>PHP</li>
-<li>Laravel</li>
-<li>MySQL</li>
+<li>PHP7.3</li>
+<li>Laravel6.20</li>
+<li>MySQL15.1</li>
 <h2>機能一覧</h2>
 <li>ユーザ登録/ログイン機能</li>
 <li>キーワード複数検索機能</li>
