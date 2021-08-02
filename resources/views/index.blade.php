@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X=UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, intial-scale=1">
-        <meta http-equiv="Content-Language" content="en">
+        <meta http-equiv="Content-Language" content="us">
         <meta name="google" content="notranslate">
         <title>News</title>
         <link rel="stylesheet"
@@ -22,7 +22,7 @@
     @include("navbar")
     <div class="container ">
         <h1>" "</h1>
-        <h1>{{ Auth::user()->name }}さんでログイン中</h1><a href="/home">HOME</a>
+        <h1>Login with {{ Auth::user()->name }}</h1><a href="/home">HOME</a>
         <?php $id=Auth::id(); ?>
         <form method="GET" action="/search">
             <h2>1.Input keywords</h2>

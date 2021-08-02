@@ -27,7 +27,6 @@ class NewsController extends Controller
         $keywords = $request -> keywords;
         $sortBy = $request -> sortBy;
         $method = $request -> method;
-        #$count = $request -> count;
         $news = $this->getNews_keywords($keywords,$sortBy,$method);
         return view('index', compact('news'));
     }
@@ -54,13 +53,13 @@ class NewsController extends Controller
             Log::debug($url);
             
             $method = "GET";
-            $counts = 20;
 
             $client = new Client();
             $response = $client->request($method, $url);
 
             $results = $response->getBody();
             $articles = json_decode($results, true);
+            $counts = count($articles['articles']);
             $news = [];
 
             for ($id = 0; $id < $counts; $id++) {
@@ -92,27 +91,23 @@ class NewsController extends Controller
         $news = $this->getNews_category($category);
         return view('index', compact('news'));
     }
-     public function puts(NewsRequest $request)
-    {
-        $category = $request -> category;
-        $news = $this->getNews_category($category);
-        return view('index', compact('news'));
-    }
+    
     public function getNews_category($category)
     {
             $url = config('newsapi.news_api_url') . "top-headlines?category=".$category."&country=us&apiKey=" . config('newsapi.news_api_key');
             Log::debug($url);
             $method = "GET";
-            $counts = 20;
+           
 
             $client = new Client();
             $response = $client->request($method, $url);
 
             $results = $response->getBody();
             $articles = json_decode($results, true);
-
+            $counts = count($articles['articles']);
             $news = [];
-
+            
+            
             for ($id = 0; $id < $counts; $id++) {
                 if ( $articles['articles'][$id]['urlToImage'] == null){
                         $thumbnail = "image/earth.jpg";

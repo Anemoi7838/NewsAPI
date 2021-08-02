@@ -14,7 +14,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h1>ようこそ、{{ Auth::user()->name}}さん</h1>
+                    <h1>Welcome {{ Auth::user()->name}}!!!</h1>
                     <form method="GET" action="/search">
                         <h2>1.Input keywords</h2>
                         <input type="radio" name="method" value="AND" checked="checked">AND
