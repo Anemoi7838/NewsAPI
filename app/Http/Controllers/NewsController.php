@@ -38,7 +38,8 @@ class NewsController extends Controller
             $key = "%20";
             for ($i=0;$i<count($array);$i++){
                 if ( $i==0){
-                    $sentence = "q=".$array[$i];
+                    $sentence = http_build_query(["q"=>$array[$i]]);
+                    //$sentence = "q=".$array[$i];
                     $keys = $sentence;
                 }else{
                     $sentence = $key.$method.$key.$array[$i];
@@ -47,14 +48,22 @@ class NewsController extends Controller
                 
             }
             $url = config('newsapi.news_api_url') . "everything?".$keys."&language=en&sortBy=".$sortBy."&apiKey=" . config('newsapi.news_api_key');
-            
             //$url = config('newsapi.news_api_url') . "top-headlines?country=us&category=business&apiKey=" . config('newsapi.news_api_key');
             //$url = config('newsapi.news_api_url') . "everything?q=".$keywords."&language=en&sortBy=".$sortBy."&apiKey=" . config('newsapi.news_api_key');
             Log::debug($url);
             
             $method = "GET";
+            $options = [  
+                'http' => [  
+                'method'           => 'GET',  
+                'protocol_version' => 1.1,  
+                'header' => 'user-agent:MyUserAgent'
+                ]  
+            ];  
+            //$context = stream_context_create($options);  
 
             $client = new Client();
+            //$response = file_get_contents($url,FALSE,$context);
             $response = $client->request($method, $url);
 
             $results = $response->getBody();
