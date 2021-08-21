@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, intial-scale=1">
         <meta http-equiv="Content-Language" content="us">
         <meta name="google" content="notranslate">
-        <title>News</title>
+        <title>NewsApp</title>
         <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="icon" type="image/x-icon" href="./favicon.ico">
