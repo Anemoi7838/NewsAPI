@@ -31,7 +31,7 @@ class NewsController extends Controller
         $user_info = new Request();
         $user_agent = app()->make('App\Http\Controllers\UserAgentController');
         $user = $user_agent->__invoke($user_info);
-        dd($user);
+        //dd($user);
         return view('index', compact('news','user'));
     }
     public function getNews_keywords($keywords,$sortBy,$method)
