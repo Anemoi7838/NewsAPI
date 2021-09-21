@@ -14,7 +14,11 @@
         
         <!-- Fonts -->
         <link rel="canonical" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-        @include("navbar")
+        @if($user === 'pc')
+            @include('navbar')
+        @else
+            @include('hamburger')
+        @endif
     </head>
     <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
@@ -23,8 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <div class="container ">
-        <h1>"</h1>
-        <h1>Login with {{ Auth::user()->name }}</h1><a href="/home">HOME</a>
+        <h1 class = "userInfo">Login with {{ Auth::user()->name }}</h1><a href="/home">HOME</a>
         <?php $id=Auth::id(); ?>
         <form method="GET" action="/search">
             <h2>1.Input keywords</h2>

@@ -28,7 +28,10 @@ class NewsController extends Controller
         $sortBy = $request -> sortBy;
         $method = $request -> method;
         $news = $this->getNews_keywords($keywords,$sortBy,$method);
-        return view('index', compact('news'));
+        $user_info = new Request();
+        $user_agent = app()->make('App\Http\Controllers\UserAgentController');
+        $user = $user_agent->__invoke($user_info);
+        return view('index', compact('news','user'));
     }
     public function getNews_keywords($keywords,$sortBy,$method)
     {
