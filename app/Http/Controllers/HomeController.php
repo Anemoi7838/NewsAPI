@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 class HomeController extends Controller
@@ -40,8 +41,10 @@ class HomeController extends Controller
                 ]);
             }
         }
-        //return view('home')->with(['favorites'=> $ff -> getByLimit()]);
         
+        //return view('home')->with(['favorites'=> $ff -> getByLimit()]);
+        $table = DB::table('news')->get();
+        dd($ff->id);
         return view('home')->with(['favorites'=> $ff ]);
     }
     
