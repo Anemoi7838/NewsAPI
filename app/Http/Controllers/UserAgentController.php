@@ -14,14 +14,26 @@ use GuzzleHttp\Psr7;
 class UserAgentController extends Controller
 {
     public function __invoke(Request $request){
-        $user_agent =  $request->header('User-Agent');
+        /*$user_agent =  $request->header('User-Agent');
         if ((strpos($user_agent, 'iPhone') !== false)
             || (strpos($user_agent, 'iPod') !== false)
             || (strpos($user_agent, 'Android') !== false)) {
             $terminal ='mobile';
         } else {
             $terminal = 'pc';
+        }*/
+        $ua = $_SERVER['HTTP_USER_AGENT'];
+        if ((strpos($ua, 'Android') !== false) 
+        && (strpos($ua, 'Mobile') !== false) 
+        || (strpos($ua, 'iPhone') !== false) 
+        || (strpos($ua, 'Windows Phone') !== false)) {
+            $terminal ='mobile';
+        }elseif((strpos($ua, 'Android') !== false) || (strpos($ua, 'iPad') !== false)){
+            $terminal = 'pc';
+        }else{
+            $terminal = 'pc';
         }
+
         return $terminal;
     }
 }
