@@ -1,4 +1,4 @@
-<!---<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed"
@@ -23,8 +23,8 @@
         </form>
         </div>
     </div>
-</nav>--->
-<nav class="navbar navbar-default navbar-static-top">
+</nav>
+<!--<nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -49,4 +49,4 @@
             </form>
             </div>
         </div>
-    </nav>
+    </nav>-->

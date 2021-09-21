@@ -13,6 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <h1>'</h1>
                     <h1>Welcome {{ Auth::user()->name}}!!!</h1>
                     <form method="GET" action="/search">
                         <h2>1.Input keywords</h2>
