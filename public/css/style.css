@@ -1,6 +1,9 @@
 .userInfo{
     margin-top: 60px;
 }
+.box{
+    margin: 10px;
+}
 .menu-btn {
     position: fixed;
     top: 10px;
