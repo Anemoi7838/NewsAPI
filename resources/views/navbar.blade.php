@@ -21,6 +21,9 @@
             <input type="submit" name="category" value="sports">
             <input type="submit" name="category" value="technology">
         </form>
+        <li class="nav-item">
+            <a class="nav-link" href="#">データ一覧</a>
+        </li>
         </div>
     </div>
 </nav>
