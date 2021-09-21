@@ -14,12 +14,14 @@
         
         <!-- Fonts -->
         <link rel="canonical" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        @include("navbar")
     </head>
     <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    @include("navbar")
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <div class="container ">
         <h1>"</h1>
         <h1>Login with {{ Auth::user()->name }}</h1><a href="/home">HOME</a>
