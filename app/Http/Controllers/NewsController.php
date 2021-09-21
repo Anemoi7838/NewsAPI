@@ -48,8 +48,6 @@ class NewsController extends Controller
                 
             }
             $url = config('newsapi.news_api_url') . "everything?".$keys."&language=en&sortBy=".$sortBy."&apiKey=" . config('newsapi.news_api_key');
-            //$url = config('newsapi.news_api_url') . "top-headlines?country=us&category=business&apiKey=" . config('newsapi.news_api_key');
-            //$url = config('newsapi.news_api_url') . "everything?q=".$keywords."&language=en&sortBy=".$sortBy."&apiKey=" . config('newsapi.news_api_key');
             Log::debug($url);
             
             $method = "GET";
@@ -60,10 +58,9 @@ class NewsController extends Controller
                 'header' => 'user-agent:MyUserAgent'
                 ]  
             ];  
-            //$context = stream_context_create($options);  
+          
 
             $client = new Client();
-            //$response = file_get_contents($url,FALSE,$context);
             $response = $client->request($method, $url);
 
             $results = $response->getBody();
