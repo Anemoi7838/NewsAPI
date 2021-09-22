@@ -23,3 +23,4 @@ Route::post("/store","NewsController@store");
 Route::delete('/delete/{favorite}',"NewsController@delete");
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/category',"NewsController@category");
+Route::get('/howToSearch',"NewsController@howToSearch");

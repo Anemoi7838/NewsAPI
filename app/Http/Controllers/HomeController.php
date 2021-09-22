@@ -41,10 +41,7 @@ class HomeController extends Controller
                 ]);
             }
         }
-        
         //return view('home')->with(['favorites'=> $ff -> getByLimit()]);
-        $table = DB::table('news')->get();
-        dd($ff->id);
         return view('home')->with(['favorites'=> $ff ]);
     }
     

@@ -172,5 +172,11 @@ class NewsController extends Controller
         $favorite->delete();
         return redirect("/home");
     }
+    public function howToSearch(){
+        $user_info = new Request();
+        $user_agent = app()->make('App\Http\Controllers\UserAgentController');
+        $user = $user_agent->__invoke($user_info);
+        return view('howToSearch',compact('user'));
+    }
     
 }
