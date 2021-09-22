@@ -14,6 +14,7 @@
                         </div>
                     @endif
                     <h1>Welcome {{ Auth::user()->name}}!!!</h1>
+                    <a href="/howToSearch">How to search</a>
                     <form method="GET" action="/search">
                         <h2>1.Input keywords</h2>
                         <input type="radio" name="method" value="AND" checked="checked">AND
