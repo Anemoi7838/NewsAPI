@@ -23,9 +23,6 @@
                     <input class="cbutton" type="submit" name="category" value="technology">
                 </form>
             </ul>
-            <ul class="navbar-nav">
-                <p class="loginUser">Login with {{ Auth::user()->name }}</p>
-            </ul>
         </div>
     </div>
     <div class="hamburger-menu">
