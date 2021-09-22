@@ -99,7 +99,10 @@ class NewsController extends Controller
     {
         $category = $request -> category;
         $news = $this->getNews_category($category);
-        return view('index', compact('news'));
+        $user_info = new Request();
+        $user_agent = app()->make('App\Http\Controllers\UserAgentController');
+        $user = $user_agent->__invoke($user_info);
+        return view('index', compact('news','user'));
     }
     
     public function getNews_category($category)
