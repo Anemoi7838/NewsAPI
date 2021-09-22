@@ -16,6 +16,7 @@
         <link rel="canonical" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
         @if($user === 'pc')
             @include('navbar')
+            @include('hamburger')
         @else
             @include('hamburger')
         @endif
@@ -27,43 +28,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <div class="container ">
-        <h1 class = "userInfo">Login with {{ Auth::user()->name }}</h1><a href="/home">HOME</a>
-        <?php $id=Auth::id(); ?>
-        <form method="GET" action="/search">
-            <h2>1.Input keywords</h2>
-            <input type="radio" name="method" value="AND" checked="checked">AND
-            <input type="radio" name="method" value="OR">OR
-            <input type="text" name="keywords" value="{{ old('keywords') }}" ></br>
-            <p class="keywords__error" style="color:red">{{ $errors->first( "keywords") }}</p>
-            <h2>2.Select option</h2>
-            <input type="radio" name="sortBy" value="relevancy" checked="checked">relevancy
-            <input type="radio" name="sortBy" value="popularity">popularity
-            <input type="radio" name="sortBy" value="publishedAt">publishedAt<br>
-            <!---<h2>Input article counts</h2>
-            <input type="text" name="count" value="{{ old('count') }}">
-            <p class="count__error" style="color:red">{{ $errors->first( "count") }}</p>--->
-            <h2>3.Push submit button</h2>
-            <input type="submit" value="submit">
-        </form>
-        <h1></h1>
-        <h2>OR</h2>
-        <h2>Choose category</h2>
-        <form method="GET" action="/category">
-            <input type="submit" name="category" value="business">
-            <input type="submit" name="category" value="entertainment">
-            <input type="submit" name="category" value="general">
-            <input type="submit" name="category" value="health">
-            <input type="submit" name="category" value="science">
-            <input type="submit" name="category" value="sports">
-            <input type="submit" name="category" value="technology">
-        </form>
-        <hr color="black" width="100%" size="10">
         @if( isset($keywords) )
-            <h1>Keyword search results: <strong>{{$keywords}}</strong></h1>
+            <h1 class="userInfo">Keyword search results: <strong>{{$keywords}}</strong></h1>
         @elseif( isset($category) )
-            <h1>Category search results: <strong>{{$category}}</strong></h1>
+            <h1 class="userInfo">Category search results: <strong>{{$category}}</strong></h1>
         @endif
         @foreach($news as $data)
+        <?php $id=Auth::id(); ?>
         <div class="card-body pt-0 pb-2">
             <h1 class="h3 card-title">
                 <hr size=3 color="black">
