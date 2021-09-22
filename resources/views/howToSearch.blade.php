@@ -47,7 +47,7 @@
             Learn more about options.<br>
             Finally, press the submit button.</p>
         <h2 id="Multiple">Multiple search</h2>
-        <>Enter multiple keywords you want to look up in the search box, separated by spaces.<br>
+        <p>Enter multiple keywords you want to look up in the search box, separated by spaces.<br>
             With multiple searches, you can also perform AND search and OR search.<br>
             AND search is to search for articles that include both words when you enter two or more keywords.<br>
             On the other hand, OR search searches for articles that contain either of the two terms when two or more keywords are entered.<br>
@@ -55,7 +55,7 @@
             Then select an option with the radio button.<br>
             The default is relevancy.<br>
             Learn more about options.<br>
-            Finally, press the submit button.<br>
+            Finally, press the submit button.</p>
         <h2 id="Category">Category search</h2>
         <p>Category search searches for articles related to that category by selecting from seven categories.<br>
             The seven categories are Business, Entertainment, General, Health, Science, Sports and Technology.<br>
