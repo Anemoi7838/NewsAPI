@@ -58,6 +58,11 @@
             <input type="submit" name="category" value="technology">
         </form>
         <hr color="black" width="100%" size="10">
+        @if( isset($keywords) )
+            <h1>Keyword search results: <strong>{{$keywords}}</strong></h1>
+        @elseif( isset($category) )
+            <h1>Category search results: <strong>{{$category}}</strong></h1>
+        @endif
         @foreach($news as $data)
         <div class="card-body pt-0 pb-2">
             <h1 class="h3 card-title">

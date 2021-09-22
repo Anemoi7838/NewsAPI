@@ -32,7 +32,7 @@ class NewsController extends Controller
         $user_agent = app()->make('App\Http\Controllers\UserAgentController');
         $user = $user_agent->__invoke($user_info);
         //dd($user);
-        return view('index', compact('news','user'));
+        return view('index', compact('news','user','keywords'));
     }
     public function getNews_keywords($keywords,$sortBy,$method)
     {
@@ -102,7 +102,7 @@ class NewsController extends Controller
         $user_info = new Request();
         $user_agent = app()->make('App\Http\Controllers\UserAgentController');
         $user = $user_agent->__invoke($user_info);
-        return view('index', compact('news','user'));
+        return view('index', compact('news','user','category'));
     }
     
     public function getNews_category($category)
