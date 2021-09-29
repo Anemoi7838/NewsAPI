@@ -36,7 +36,7 @@
             <h2 class = "loginUser">1.Input keywords</h2>
             <p class = "loginUser"><input  type="radio" name="method" value="AND" checked="checked">AND
             <input  type="radio" name="method" value="OR">OR</p>
-            <p class = "search"></p><input  type="text" name="keywords" value="{{ old('keywords') }}" ></p>
+            <p class = "search"><input type="text" name="keywords" value="{{ old('keywords') }}" ></p>
             <p class="keywords__error" style="color:red">{{ $errors->first( "keywords") }}</p>
             <h2 class = "loginUser">2.Select option</h2>
             <p class = "loginUser"><input type="radio" name="sortBy" value="relevancy" checked="checked">relevancy
