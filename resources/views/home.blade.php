@@ -14,6 +14,10 @@
                         </div>
                     @endif
                     <h1>Welcome {{ Auth::user()->name}}!!!</h1>
+                    <form method="GET" action="/home">
+                        <input type="hidden" name="lang" value="ja">
+                        <input type="submit" value="Japanese">
+                    </form>
                     <a href="/howToSearch">How to search</a>
                     <form method="GET" action="/search">
                         <h2>1.Input keywords</h2>
@@ -46,29 +50,7 @@
                         <input type="submit" name="category" value="technology">
                     </form>
                     <hr color="black" width="100%" size="10">
-                    <h2>Favorite articles</h2>
-                    <?php $counts=count($favorites); ?>
-                    @for($i=0;$i<$counts;$i++)
-                        <a href="{{ $favorites[$i]['url']}}">{{ $favorites[$i]['title'] }}</a><br>
-                        <form action="/delete/{{ $favorites[$i]['id'] }}" id="form_delete"  method="post" >
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" style="display:none" value="delete">
-                            <button><span onclick="return deleteNews(this);">delete</span></button>
-                            <script>
-                                function deleteNews(e) {
-                                'use strict';
-
-                                if (!window.confirm('本当に削除していいですか?')) {
-                                    window.alert('キャンセルされました');
-                                    return false;
-                                    }
-                                    document.deleteform.submit();
-                                }
-                                    
-                            </script>
-                        </form>
-                    @endfor
+                    <a href="/favorite">Favorite articles</a>
                 </div>
             </div>
         </div>

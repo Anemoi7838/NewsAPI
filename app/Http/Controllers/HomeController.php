@@ -25,7 +25,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(News $favorite)
+    public function index(News $favorite, Request $test)
     {
         $id=Auth::id();
         $post = News::all();
@@ -41,8 +41,14 @@ class HomeController extends Controller
                 ]);
             }
         }
+        $lang = $test->lang;
         //return view('home')->with(['favorites'=> $ff -> getByLimit()]);
-        return view('home')->with(['favorites'=> $ff ]);
+        if ($lang =='ja'){
+            return view('jhome')->with(['favorites'=> $ff ]);
+        }else{
+            return view('home')->with(['favorites'=> $ff ]);
+        }
+        
     }
     
 
