@@ -35,6 +35,7 @@
                         <p class="count__error" style="color:red">{{ $errors->first( "count") }}</p>
                         --->
                         <h2>3.Push submit button</h2>
+                        <input type="hidden" name="lang" value="en">
                         <input type="submit" value="submit">
                     </form>
                     <h1></h1>

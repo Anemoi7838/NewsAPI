@@ -35,6 +35,7 @@
                         <p class="count__error" style="color:red">{{ $errors->first( "count") }}</p>
                         --->
                         <h2>3.検索</h2>
+                        <input type="hidden" name="lang" value="ja">
                         <input type="submit" value="検索">
                     </form>
                     <h1></h1>

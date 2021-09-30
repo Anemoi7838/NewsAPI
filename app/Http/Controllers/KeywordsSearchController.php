@@ -23,7 +23,13 @@ class KeywordsSearchController extends Controller
         $user_info = new Request();
         $user_agent = app()->make('App\Http\Controllers\UserAgentController');
         $user = $user_agent->__invoke($user_info);
+        $lang = $request ->lang;
         //dd($user);
-        return view('index', compact('news','user','keywords'));
+        if($lang == 'ja'){
+            return view('jindex', compact('news','user','keywords'));
+        }else{
+            return view('index', compact('news','user','keywords'));
+        }
+        
     }
 }
