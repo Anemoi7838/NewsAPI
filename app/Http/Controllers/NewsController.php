@@ -13,14 +13,6 @@ use GuzzleHttp\Psr7;
 
 class NewsController extends Controller
 {
-    public function index()
-    {
-        $keywords="meteorology";
-        $sortBy="relevancy";
-        $count=10;
-        $news=$this->getNews($keywords,$sortBy,$count);
-        return view('index', compact('news'));
-    }
     public function search(NewsRequest $request)
     {
         //dd($request->toArray());

@@ -15,12 +15,14 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-
-Route::get("/api","NewsController@index");
-Route::get("/search","NewsController@search");
 Auth::routes();
-Route::post("/store","NewsController@store");
-Route::delete('/delete/{favorite}',"NewsController@delete");
+
+//Route::get("/search","NewsController@search");
+Route::get("/search","KeywordsSearchController");
+
+Route::post("/store","NewsStoreController");
+//Route::delete('/delete/{favorite}',"NewsController@delete");
+Route::delete('/delete/{favorite}',"NewsDeleteController");
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/category',"NewsController@category");
-Route::get('/howToSearch',"NewsController@howToSearch");
+Route::get('/category',"CategorySearchController");
+Route::get('/howToSearch',"HowToSearchController");
