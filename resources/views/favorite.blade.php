@@ -28,8 +28,8 @@
                                 function deleteNews(e) {
                                 'use strict';
 
-                                if (!window.confirm('本当に削除していいですか?')) {
-                                    window.alert('キャンセルされました');
+                                if (!window.confirm('Do you really want to delete this?')) {
+                                    window.alert('Canceled');
                                     return false;
                                     }
                                     document.deleteform.submit();

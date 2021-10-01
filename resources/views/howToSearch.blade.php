@@ -41,13 +41,20 @@
             <li><a href="#Delete">Delete favorite articles</a></li>   
         </ul>
         <h2 id="Single">Single search</h2>
-        <p>Enter the keyword you want to search in the search box.<br>
+        <p>Click on the hamburger menu in the upper right.<br>
+            This is not necessary on the home screen.</p>
+            <img src="image/01.png" width="100%">
+            <p>Enter the keyword you want to search in the search box.<br>
             Then select an option with the radio button.<br>
             The default is relevancy.<br>
             Learn more about options.<br>
             Finally, press the submit button.</p>
+            <img src="image/02.png" width="100%">
         <h2 id="Multiple">Multiple search</h2>
-        <p>Enter multiple keywords you want to look up in the search box, separated by spaces.<br>
+        <p>Click on the hamburger menu in the upper right.<br>
+            This is not necessary on the home screen.</p>
+            <img src="image/01.png" width="100%">
+            <p>Enter multiple keywords you want to look up in the search box, separated by spaces.<br>
             With multiple searches, you can also perform AND search and OR search.<br>
             AND search is to search for articles that include both words when you enter two or more keywords.<br>
             On the other hand, OR search searches for articles that contain either of the two terms when two or more keywords are entered.<br>
@@ -56,13 +63,17 @@
             The default is relevancy.<br>
             Learn more about options.<br>
             Finally, press the submit button.</p>
+            <img src="image/03.png" width="100%">
         <h2 id="Category">Category search</h2>
-        <p>Category search searches for articles related to that category by selecting from seven categories.<br>
+        <p>Click on the hamburger menu in the upper right.<br>
+            This is not necessary on the home screen.<br>
+            Category search searches for articles related to that category by selecting from seven categories.<br>
             The seven categories are Business, Entertainment, General, Health, Science, Sports and Technology.<br>
-            You can search by pressing the button under Choose Category.<br>
-            Cannot be used in combination with keyword search.<br>
-            You can also search by category from the navigation bar above.<br>
-            On mobile devices, click on the hamburger menu in the upper right.</p>
+            You can search by pressing the button under Choose Category.</p>
+            <img src="image/04.png" width="100%">
+            <p>Cannot be used in combination with keyword search.<br>
+            You can also search by category from the navigation bar above.</p>
+            <img src="image/05.png" width="100%">
         <h2 id="Options">About options</h2>
         <p>Describes the options.<br>
             This application has three options.<br>
@@ -71,13 +82,18 @@
             Published At is a search for 20 new articles in order with the keyword you want to search.</p>
         <h2 id="Add">Add favorite articles</h2>
         <p>After the search, 20 articles matching the search will be displayed.<br>
-            Below the title of the article is a Favorites button.<br>
-            If you click here, you will be notified that you have registered in the upper right corner.<br>
-            Also, for articles that have already been registered, you will be notified that you have already registered.<br>
-            When you return to the home page, you can see the articles you registered in the Favorites Articles column.</p>
+            Below the title of the article is a Favorites button.</p>
+            <img src="image/06.png" width="100%">
+            <p>If you click here, you will be notified that you have registered in the upper right corner.</p>
+            <img src="image/07.PNG" width="100%">
+            <p>Also, for articles that have already been registered, you will be notified that you have already registered.</p>
+            <img src="image/08.PNG" width="100%">
+            <p>When you return to the home page, you can see the articles you registered in the Favorites Articles column.</p>
         <h2 id="Delete">Delete favorite articles</h2>
         <p>If you want to delete your favorite articles, there is a delete button under the title of your favorite articles on your home page, so click that button.<br>
-            A confirmation pop-up screen will appear. Click OK to delete it.</p>
+        <img src="image/09.png" width="100%">
+        <p> A confirmation pop-up screen will appear. Click OK to delete it.</p>
+        <img src="image/10.png" width="100%">
     </div>
     </body>
 </html>

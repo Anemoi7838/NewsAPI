@@ -14,35 +14,42 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <div style="display:inline-flex">
-                <form method="GET" action="/category">
-                    <input type="hidden" name="category" value="business">
-                    <input type="submit" value="ビジネス">
-                </form>
-                <form method="GET" action="/category">
-                    <input type="hidden" name="category" value="entertainment">
-                    <input type="submit" value="エンタメ">
-                </form>
-                <form method="GET" action="/category">
-                    <input type="hidden" name="category" value="general">
-                    <input type="submit" value="一般">
-                </form>
-                <form method="GET" action="/category">
-                    <input type="hidden" name="category" value="health">
-                    <input type="submit" value="健康">
-                </form> 
-                <form method="GET" action="/category">
-                    <input type="hidden" name="category" value="science">
-                    <input type="submit" value="科学">
-                </form>
-                <form method="GET" action="/category">
-                    <input type="hidden" name="category" value="sports">
-                    <input type="submit" value="スポーツ">
-                </form>
-                <form method="GET" action="/category">
-                    <input type="hidden" name="category" value="technology">
-                    <input type="submit" value="テクノロジー">
-                </form>
-            </div>
+                    <form method="GET" action="/category">
+                        <input type="hidden" name="category" value="business">
+                        <input type="hidden" name="lang" value="ja">
+                        <input class="box" type="submit" value="ビジネス">
+                    </form>
+                    <form method="GET" action="/category">
+                        <input type="hidden" name="category" value="entertainment">
+                        <input type="hidden" name="lang" value="ja">
+                        <input class="box" type="submit" value="エンタメ">
+                    </form>
+                    <form method="GET" action="/category">
+                        <input type="hidden" name="category" value="general">
+                        <input type="hidden" name="lang" value="ja">
+                        <input class="box" type="submit" value="一般">
+                    </form>
+                    <form method="GET" action="/category">
+                        <input type="hidden" name="category" value="health">
+                        <input type="hidden" name="lang" value="ja">
+                        <input class="box" type="submit" value="健康">
+                    </form> 
+                    <form method="GET" action="/category">
+                        <input type="hidden" name="category" value="science">
+                        <input type="hidden" name="lang" value="ja">
+                        <input class="box" type="submit" value="科学">
+                    </form>
+                    <form method="GET" action="/category">
+                        <input type="hidden" name="category" value="sports">
+                        <input type="hidden" name="lang" value="ja">
+                        <input class="box" type="submit" value="スポーツ">
+                    </form>
+                    <form method="GET" action="/category">
+                        <input type="hidden" name="category" value="technology">
+                        <input type="hidden" name="lang" value="ja">
+                        <input class="box" type="submit" value="テクノロジー">
+                    </form>
+                </div>
             </ul>
         </div>
     </div>
@@ -52,7 +59,7 @@
             <!--ここからメニュー-->
     <div class="menu-content">
     <h1 class = "loginUser">{{ Auth::user()->name }}さんでログイン中</h1>
-    <a  class = "loginUser"href="/home">HOME</a>
+    <a  class = "loginUser"href="/home">ホーム</a>
         <form method="GET" action="/search">
             <h2 class = "loginUser">1.キーワード入力欄</h2>
             <p class = "loginUser"><input  type="radio" name="method" value="AND" checked="checked">かつ
@@ -64,6 +71,7 @@
             <input type="radio" name="sortBy" value="popularity">人気順
             <input type="radio" name="sortBy" value="publishedAt">新着順</p>
             <h2 class = "loginUser">3.検索</h2>
+            <input type="hidden" name="lang" value="ja">
             <input class="box" type="submit" value="検索">
         </form>
         <h1></h1>
@@ -72,31 +80,38 @@
         <div style="display:inline-flex">
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="business">
-                <input type="submit" value="ビジネス">
+                <input type="hidden" name="lang" value="ja">
+                <input class="box" type="submit" value="ビジネス">
             </form>
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="entertainment">
-                <input type="submit" value="エンタメ">
+                <input type="hidden" name="lang" value="ja">
+                <input class="box" type="submit" value="エンタメ">
             </form>
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="general">
-                <input type="submit" value="一般">
+                <input type="hidden" name="lang" value="ja">
+                <input class="box" type="submit" value="一般">
             </form>
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="health">
-                <input type="submit" value="健康">
+                <input type="hidden" name="lang" value="ja">
+                <input class="box" type="submit" value="健康">
             </form> 
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="science">
-                <input type="submit" value="科学">
+                <input type="hidden" name="lang" value="ja">
+                <input class="box" type="submit" value="科学">
             </form>
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="sports">
-                <input type="submit" value="スポーツ">
+                <input type="hidden" name="lang" value="ja">
+                <input class="box" type="submit" value="スポーツ">
             </form>
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="technology">
-                <input type="submit" value="テクノロジー">
+                <input type="hidden" name="lang" value="ja">
+                <input class="box" type="submit" value="テクノロジー">
             </form>
         </div>
     </div>

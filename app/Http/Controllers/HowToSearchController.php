@@ -11,10 +11,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 class HowToSearchController extends Controller
 {
-    public function __invoke(){
+    public function __invoke(Request $request){
         $user_info = new Request();
         $user_agent = app()->make('App\Http\Controllers\UserAgentController');
         $user = $user_agent->__invoke($user_info);
-        return view('howToSearch',compact('user'));
+        $lang = $request -> lang;
+        if( $lang == 'ja'){
+            return view('jhowToSearch',compact('user'));
+        }else{
+            return view('howToSearch',compact('user'));
+        }
+        
     }
 }

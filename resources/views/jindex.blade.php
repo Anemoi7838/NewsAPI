@@ -16,7 +16,6 @@
         <link rel="canonical" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
         @if($user === 'pc')
             @include('jnavbar')
-            @include('jhamburger')
         @else
             @include('jhamburger')
         @endif
@@ -44,7 +43,7 @@
                     <input type="hidden"name="news[name]" value="<?php echo $id;?>">
                     <input type="hidden"name="news[title]" value="{{ $data['name'] }}">
                     <input type="hidden"name="news[url]" value="{{ $data['url'] }}">
-                    <input type="submit" value="favorite">
+                    <input type="submit" value="お気に入り追加">
                 </form>
             </h1>
             <div class="card-text">

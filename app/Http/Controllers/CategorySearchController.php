@@ -20,6 +20,12 @@ class CategorySearchController extends Controller
         $user_info = new Request();
         $user_agent = app()->make('App\Http\Controllers\UserAgentController');
         $user = $user_agent->__invoke($user_info);
-        return view('index', compact('news','user','category'));
+        $lang = $request->lang;
+        if ( $lang =="ja"){
+            return view('jindex', compact('news','user','category'));
+        }else{
+            return view('index', compact('news','user','category'));
+        }
+        
     } 
 }

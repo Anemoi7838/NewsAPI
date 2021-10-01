@@ -18,7 +18,10 @@
                         <input type="hidden" name="lang" value="en">
                         <input type="submit" value="English">
                     </form>
-                    <a href="/howToSearch">使い方</a>
+                    <form method="GET" action="/howToSearch">
+                        <input type="hidden" name="lang" value="ja">
+                        <input type="submit" value="使い方">
+                    </form>
                     <form method="GET" action="/search">
                         <h2>1.キーワード入力欄</h2>
                         <input type="radio" name="method" value="AND" checked="checked">かつ

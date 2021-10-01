@@ -16,7 +16,6 @@
         <link rel="canonical" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
         @if($user === 'pc')
             @include('navbar')
-            @include('hamburger')
         @else
             @include('hamburger')
         @endif

@@ -18,7 +18,10 @@
                         <input type="hidden" name="lang" value="ja">
                         <input type="submit" value="Japanese">
                     </form>
-                    <a href="/howToSearch">How to search</a>
+                    <form method="GET" action="/howToSearch">
+                        <input type="hidden" name="lang" value="en">
+                        <input type="submit" value="How to search">
+                    </form>
                     <form method="GET" action="/search">
                         <h2>1.Input keywords</h2>
                         <input type="radio" name="method" value="AND" checked="checked">AND

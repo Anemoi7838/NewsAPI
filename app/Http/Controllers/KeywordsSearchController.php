@@ -11,9 +11,8 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 class KeywordsSearchController extends Controller
 {
-    public function __invoke(NewsRequest $request)
+    public function __invoke(Request $request)
     {
-        //dd($request->toArray());
         $keywords = $request -> keywords;
         $sortBy = $request -> sortBy;
         $method = $request -> method;
@@ -23,8 +22,8 @@ class KeywordsSearchController extends Controller
         $user_info = new Request();
         $user_agent = app()->make('App\Http\Controllers\UserAgentController');
         $user = $user_agent->__invoke($user_info);
-        $lang = $request ->lang;
-        //dd($user);
+        $lang = $request -> lang;
+        //dd($request->toArray());
         if($lang == 'ja'){
             return view('jindex', compact('news','user','keywords'));
         }else{

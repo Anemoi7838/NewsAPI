@@ -17,7 +17,7 @@ class NewsDeleteController extends Controller
     {
         //dd($favorite->all());
         $favorite->delete();
-        return redirect("/home");
+        return redirect("/favorite");
     }
 
 }

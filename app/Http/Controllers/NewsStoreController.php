@@ -19,10 +19,16 @@ class NewsStoreController extends Controller
         $counts = $post->count();
         $id=Auth::id();
         $url = $request->news['url'];
+        $lang = $request->lang;
         if($counts==0){
             $input=$request["news"];
             $favorite->fill($input)->save();
-            session()->flash('msg_success', '登録しました');
+            if($lang =='ja'){
+                session()->flash('msg_success', '登録しました');
+            }else{
+                session()->flash('msg_success', '登録しました');
+            }
+            
             return redirect()->back();
         }
         for ($i = 0;$i<$counts; $i++){
@@ -30,17 +36,32 @@ class NewsStoreController extends Controller
                 if ( $i == $counts-1 ){
                      $input=$request["news"];
                      $favorite->fill($input)->save();
-                     session()->flash('msg_success', '登録しました');
+                     if ( $lang == 'ja'){
+                        session()->flash('msg_success', '登録しました');
+                     }else{
+                        session()->flash('msg_success', 'Registered');
+                     }
+                     
                      return redirect()->back();
                 }
             }elseif($post[$i]['name'] == $id && $post[$i]['url'] == $url){
+                if( $lang == 'ja'){
                     session()->flash('msg_danger', 'すでに登録済みです');
-                    return redirect()->back();
+                }else{
+                    session()->flash('msg_danger', 'Already registered');
+                }
+                
+                return redirect()->back();
             }
             elseif($post[$i]['name'] != $id && $i==$counts-1 ){
                 $input=$request["news"];
                 $favorite->fill($input)->save();
-                session()->flash('msg_success', '登録しました');
+                if( $lang == 'ja'){
+                    session()->flash('msg_success', '登録しました');
+                }else{
+                    session()->flash('msg_success', 'Registered');
+                }
+                
                 return redirect()->back();
             }
         }

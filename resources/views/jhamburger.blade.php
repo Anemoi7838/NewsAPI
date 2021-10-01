@@ -16,6 +16,7 @@
             <input type="radio" name="sortBy" value="popularity">人気順
             <input type="radio" name="sortBy" value="publishedAt">新着順</p>
             <h2 class = "loginUser">3.検索</h2>
+            <input type="hidden" name="lang" value="ja">
             <input class="box" type="submit" value="検索">
         </form>
         <h1></h1>
@@ -24,30 +25,37 @@
         <div style="display:inline-flex">
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="business">
+                <input type="hidden" name="lang" value="ja">
                 <input type="submit" value="ビジネス">
             </form>
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="entertainment">
+                <input type="hidden" name="lang" value="ja">
                 <input type="submit" value="エンタメ">
             </form>
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="general">
+                <input type="hidden" name="lang" value="ja">
                 <input type="submit" value="一般">
             </form>
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="health">
+                <input type="hidden" name="lang" value="ja">
                 <input type="submit" value="健康">
             </form> 
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="science">
+                <input type="hidden" name="lang" value="ja">
                 <input type="submit" value="科学">
             </form>
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="sports">
+                <input type="hidden" name="lang" value="ja">
                 <input type="submit" value="スポーツ">
             </form>
             <form method="GET" action="/category">
                 <input type="hidden" name="category" value="technology">
+                <input type="hidden" name="lang" value="ja">
                 <input type="submit" value="テクノロジー">
             </form>
             </div>
