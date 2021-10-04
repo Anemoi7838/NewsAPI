@@ -1,15 +1,15 @@
 <h1>NewsAPIを用いた英文ニュースアプリケーション</h1>
 <p>キーワード検索でそのキーワードに関する英文ニュースを閲覧できます。</p>
 <p>気に入ったニュースを登録できます。</p>
-<a href="#pur">目的</a>
-<h2 class = "userInfo">検索機能について</h2>
+<a href="#pur">作成目的</a>
+<h3 class = "userInfo">検索機能について</h3>
 <ul>
     <li><a href="#Single">単体検索</a></li>
     <li><a href="#Multiple">複数検索</a></li>
     <li><a href="#Category">カテゴリー検索</a></li>
     <li><a href="#Options">オプションについて</a></li>
 </ul>   
-<h2>お気に入り機能について</h2>
+<h3>お気に入り機能について</h3>
 <ul>
     <li><a href="#Add">お気に入り記事の追加</a></li>
     <li><a href="#Delete">お気に入り記事の削除</a></li>   
