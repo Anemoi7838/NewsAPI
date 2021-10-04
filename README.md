@@ -1,55 +1,22 @@
 <h1>NewsAPIを用いた英文ニュースアプリケーション</h1>
 <p>キーワード検索でそのキーワードに関する英文ニュースを閲覧できます。</p>
 <p>気に入ったニュースを登録できます。</p>
-<h2>作成の目的</h2>
-週に1回、大学で研究に関する英文のニュースを紹介するので、そのニュースのネタ探しと英語の勉強のため作成しました。
-<h2>使い方</h2>
-<h3>ログイン画面</h3>
-<img src="https://github.com/Anemoi7838/NewsAPI/blob/master/img/readme_01.PNG">
-<p>アプリケーションを起動すると、ログイン画面になります。<br>
-ここでログインしてください。はじめての方は、右上のRegisterで登録してください。<br>
-また、デフォルトでEmail：Test@gmail.com、PW：hogehogeというユーザがありますので、こちらでもログインできます。</p>
-
-<h3>トップ画面</h3>
-<img src="https://github.com/Anemoi7838/NewsAPI/blob/master/img/readme_02.PNG">
-<p>Input keywordsに検索したいキーワード(英単語)を入力します。<br>
-また、複数検索も可能で、スペースを空けてキーワードを入力してください。<br>
-左のラジオボタンでAND検索かOR検索を選択できます。<br>
-Select optionでは、relevancyは、そのキーワードで最も関連性が高いニュース、popularityは、最も閲覧されているニュース、publishedAtは、最も新しいニュースが先頭に表示されます。<br>
-最後に、submitというボタンをクリックすると検索されます。<br>
-カテゴリー検索もでき、business、entertainment、general、health、science、sports、technologyから選択できます。<br>
-Favorite articlesの下にお気に入りの記事が表示されます。</p>
-
-<h3>検索、結果画面</h3>
-<img src="https://github.com/Anemoi7838/NewsAPI/blob/master/img/readme_03.PNG">
-<p>先ほどのキーワードに関するニュースが20記事表示されます。<br>
-ニュースタイトルをクリックすると、情報元にとび、内容が確認できます。<br>
-その下のfavoriteというボタンをクリックすることで、お気に入り記事として、登録され、トップ画面で表示されます。</p>
-<h2>URL</h2>
-<a href="https://thawing-fortress-57866.herokuapp.com/">https://thawing-fortress-57866.herokuapp.com/</a>
-<h2>使用技術</h2>
-<li>HTML/CSS</li>
-<li>PHP7.3</li>
-<li>Laravel6.20</li>
-<li>MySQL15.1</li>
-<h2>機能一覧</h2>
-<li>ユーザ登録/ログイン機能</li>
-<li>キーワード複数検索機能</li>
-<li>カテゴリー検索機能</li>
-<li>ニュース登録機能</li>
-<h1 class = "userInfo">検索機能について</h1>
-<a href="/home">ホーム</a>
+<a href="#pur">目的</a>
+<h2 class = "userInfo">検索機能について</h2>
 <ul>
     <li><a href="#Single">単体検索</a></li>
     <li><a href="#Multiple">複数検索</a></li>
     <li><a href="#Category">カテゴリー検索</a></li>
     <li><a href="#Options">オプションについて</a></li>
 </ul>   
-<h1>お気に入り機能について</h1>
+<h2>お気に入り機能について</h2>
 <ul>
     <li><a href="#Add">お気に入り記事の追加</a></li>
     <li><a href="#Delete">お気に入り記事の削除</a></li>   
 </ul>
+<a href="#use">使用技術</a>
+<h2 id = "pur">作成の目的</h2>
+週に1回、大学で研究に関する英文のニュースを紹介するので、そのニュースのネタ探しと英語の勉強のため作成しました。
 <h2 id="Single">単体検索</h2>
 <p>右上のハンバーガーメニューをクリックしましょう。<br>
     因みにホームではその操作は必要ありません。<br>
@@ -59,11 +26,11 @@ Favorite articlesの下にお気に入りの記事が表示されます。</p>
     デフォルトでは、関連順になっています。<br>
     オプションについて詳しくはこちらから<br>
     最後に検索ボタンをクリックしましょう。</p>
-    <img src="image/02.png" width="100%">
+    <img src="https://github.com/Anemoi7838/NewsAPI/blob/master/public/image/02.png" width="100%">
 <h2 id="Multiple">複数検索</h2>
 <p>右上のハンバーガーメニューをクリックしましょう。<br>
     因みにホームではその操作は必要ありません。</p>
-    <img src="image/01.png" width="100%">
+    <img src="https://github.com/Anemoi7838/NewsAPI/blob/master/public/image/01.png" width="100%">
     <p>検索したい複数のキーワードをスペースを空けて入力しましょう。<br>
     入力欄の左側でAND検索かOR検索を選ぶことができます。<br>
     AND検索とは、2つ以上のキーワードを入力したときに、両方の単語を含む記事が検索されます。<br>
@@ -73,17 +40,17 @@ Favorite articlesの下にお気に入りの記事が表示されます。</p>
     デフォルトでは、関連順になっています。<br>
     オプションについて詳しくはこちらから<br>
     最後に検索ボタンをクリックしましょう。</p>
-    <img src="image/03.png" width="100%">
+    <img src="https://github.com/Anemoi7838/NewsAPI/blob/master/public/image/03.png" width="100%">
 <h2 id="Category">カテゴリー検索</h2>
 <p>右上のハンバーガーメニューをクリックしましょう。<br>
     因みにホームではその操作は必要ありません。<br>
     カテゴリ検索では、7つのカテゴリから選択して、そのカテゴリーに関連する記事を検索します。<br>
     7つのカテゴリは、ビジネス、エンターテインメント、一般、健康、科学、スポーツ、テクノロジーです。<br>
     ボタンを押すだけで検索できます。<br>
-    <img src="image/04.png" width="100%">
+    <img src="https://github.com/Anemoi7838/NewsAPI/blob/master/public/image/04.png" width="100%">
     <p>キーワード検索との併用はできません。<br>
     上のナビゲーションバーからカテゴリーで検索することもできます。<br>
-    <img src="image/05.png" width="100%">
+    <img src="https://github.com/Anemoi7838/NewsAPI/blob/master/public/image/05.png" width="100%">
 <h2 id="Options">オプションについて</h2>
 <p>オプションについて説明します。<br>
     このアプリケーションには3つのオプションがあります。<br>
@@ -93,14 +60,27 @@ Favorite articlesの下にお気に入りの記事が表示されます。</p>
 <h2 id="Add">お気に入り記事の追加</h2>
 <p>検索後、検索に一致する記事が20件表示されます。<br>
     記事のタイトルの下には、お気に入りボタンがあります。</p>
-    <img src="image/06.png" width="100%">
+    <img src="https://github.com/Anemoi7838/NewsAPI/blob/master/public/image/06.png" width="100%">
     <p>ここをクリックすると、右上に登録したことが通知されます。</p>
-    <img src="image/07.PNG" width="100%">
+    <img src="https://github.com/Anemoi7838/NewsAPI/blob/master/public/image/07.PNG" width="100%">
     <p>また、すでに登録されている記事については、登録済みであることが通知されます。</p>
-    <img src="image/08.PNG" width="100%">
+    <img src="https://github.com/Anemoi7838/NewsAPI/blob/master/public/image/08.PNG" width="100%">
     <p>ホームページに戻ると、お気に入りの記事ページに登録した記事が表示されます。</p>
 <h2 id="Delete">お気に入り記事の削除</h2>
 <p>お気に入りの記事を削除したい場合は、ホームページのお気に入りの記事のタイトルの下に削除ボタンがありますので、そのボタンをクリックしてください。</p>
-<img src="image/09.png" width="100%">
+<img src="https://github.com/Anemoi7838/NewsAPI/blob/master/public/image/09.png" width="100%">
 <p>確認のポップアップ画面が表示されます。 OKをクリックして削除します。</p>
-<img src="image/10.png" width="100%">
+<img src="https://github.com/Anemoi7838/NewsAPI/blob/master/public/image/10.png" width="100%">
+<h2>URL</h2>
+<a href="https://thawing-fortress-57866.herokuapp.com/">https://thawing-fortress-57866.herokuapp.com/</a>
+<h2 id="use">使用技術</h2>
+<li>HTML/CSS</li>
+<li>PHP7.3</li>
+<li>Laravel6.20</li>
+<li>MySQL15.1</li>
+<h2>機能一覧</h2>
+<li>ユーザ登録/ログイン機能</li>
+<li>キーワード複数検索機能</li>
+<li>カテゴリー検索機能</li>
+<li>ニュース登録機能</li>
+<li>日本語と英語対応</li>
