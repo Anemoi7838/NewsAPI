@@ -15,7 +15,6 @@ class NewsController extends Controller
 {
     public function search(NewsRequest $request)
     {
-        //dd($request->toArray());
         $keywords = $request -> keywords;
         $sortBy = $request -> sortBy;
         $method = $request -> method;
@@ -23,7 +22,6 @@ class NewsController extends Controller
         $user_info = new Request();
         $user_agent = app()->make('App\Http\Controllers\UserAgentController');
         $user = $user_agent->__invoke($user_info);
-        //dd($user);
         return view('index', compact('news','user','keywords'));
     }
     public function getNews_keywords($keywords,$sortBy,$method)

@@ -15,7 +15,6 @@ class NewsDeleteController extends Controller
 {
     public function __invoke(News $favorite)
     {
-        //dd($favorite->all());
         $favorite->delete();
         return redirect("/favorite");
     }
