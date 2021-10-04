@@ -53,7 +53,7 @@ Favorite articlesの下にお気に入りの記事が表示されます。</p>
 <h2 id="Single">単体検索</h2>
 <p>右上のハンバーガーメニューをクリックしましょう。<br>
     因みにホームではその操作は必要ありません。<br>
-    <img src="image/01.png" width="100%">
+    <img src="https://github.com/Anemoi7838/NewsAPI/blob/master/public/image/01.png" width="100%">
     <p>検索したいキーワードを検索欄に入れましょう。<br>
     次にオプションを選択します。<br>
     デフォルトでは、関連順になっています。<br>
