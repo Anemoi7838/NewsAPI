@@ -48,9 +48,10 @@
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
+                                <p>If you are first time, you can sign in as a guest.</br>
+                                Email:Test@gmail.com PW:hogehoge</p>
                             </div>
                         </div>
-
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
